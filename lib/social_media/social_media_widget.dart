@@ -8,14 +8,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegistrationWidget extends StatefulWidget {
-  const RegistrationWidget({Key key}) : super(key: key);
+class SocialMediaWidget extends StatefulWidget {
+  const SocialMediaWidget({Key key}) : super(key: key);
 
   @override
-  _RegistrationWidgetState createState() => _RegistrationWidgetState();
+  _SocialMediaWidgetState createState() => _SocialMediaWidgetState();
 }
 
-class _RegistrationWidgetState extends State<RegistrationWidget> {
+class _SocialMediaWidgetState extends State<SocialMediaWidget> {
   bool _loadingButton = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 

@@ -1,6 +1,6 @@
 {
-    "name": "timeline_weekly",
-    "short_name": "timeline_weekly",
+    "name": "weekly",
+    "short_name": "weekly",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

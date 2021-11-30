@@ -1,9 +1,8 @@
-import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../registration/registration_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -245,19 +244,11 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                         onPressed: () async {
                           setState(() => _loadingButton = true);
                           try {
-                            final user = await signInWithEmail(
-                              context,
-                              emailAddressLoginController.text,
-                              passwordLoginController.text,
-                            );
-                            if (user == null) {
-                              return;
-                            }
-
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => RegistrationWidget(),
+                                builder: (context) =>
+                                    NavBarPage(initialPage: 'HomePage'),
                               ),
                             );
                           } finally {

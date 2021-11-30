@@ -3,24 +3,25 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
-import '../registration/registration_widget.dart';
+import '../social_media/social_media_widget.dart';
+import '../test/test_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginWidget extends StatefulWidget {
-  const LoginWidget({Key key}) : super(key: key);
+class AuthPageWidget extends StatefulWidget {
+  const AuthPageWidget({Key key}) : super(key: key);
 
   @override
-  _LoginWidgetState createState() => _LoginWidgetState();
+  _AuthPageWidgetState createState() => _AuthPageWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget> {
-  TextEditingController emailAddressController1;
-  TextEditingController emailAddressController2;
-  TextEditingController emailAddressController3;
-  TextEditingController emailAddressController4;
+class _AuthPageWidgetState extends State<AuthPageWidget> {
+  TextEditingController emailAddressController;
+  TextEditingController nameController;
+  TextEditingController surnameController;
+  TextEditingController phoneNumberController;
   TextEditingController passwordController;
   bool passwordVisibility;
   TextEditingController passwordConfirmController;
@@ -37,10 +38,10 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   void initState() {
     super.initState();
-    emailAddressController1 = TextEditingController();
-    emailAddressController2 = TextEditingController();
-    emailAddressController3 = TextEditingController();
-    emailAddressController4 = TextEditingController();
+    emailAddressController = TextEditingController();
+    nameController = TextEditingController();
+    surnameController = TextEditingController();
+    phoneNumberController = TextEditingController();
     passwordController = TextEditingController();
     passwordVisibility = false;
     passwordConfirmController = TextEditingController();
@@ -54,6 +55,7 @@ class _LoginWidgetState extends State<LoginWidget> {
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
+      autovalidateMode: AutovalidateMode.always,
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Color(0xFF14181B),
@@ -368,9 +370,21 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 20, 0, 0),
                                           child: FFButtonWidget(
-                                            onPressed: () {
-                                              print(
-                                                  'Button-ForgotPassword pressed ...');
+                                            onPressed: () async {
+                                              setState(
+                                                  () => _loadingButton2 = true);
+                                              try {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        TestWidget(),
+                                                  ),
+                                                );
+                                              } finally {
+                                                setState(() =>
+                                                    _loadingButton2 = false);
+                                              }
                                             },
                                             text: 'Forgot Password?',
                                             options: FFButtonOptions(
@@ -496,7 +510,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 20, 0, 0),
                                           child: TextFormField(
-                                            controller: emailAddressController1,
+                                            controller: nameController,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Name',
@@ -562,7 +576,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 20, 0, 0),
                                           child: TextFormField(
-                                            controller: emailAddressController2,
+                                            controller: surnameController,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Surname',
@@ -626,7 +640,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 20, 0, 0),
                                           child: TextFormField(
-                                            controller: emailAddressController3,
+                                            controller: emailAddressController,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Email Address',
@@ -692,7 +706,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 20, 0, 0),
                                           child: TextFormField(
-                                            controller: emailAddressController4,
+                                            controller: phoneNumberController,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Phone Number',
@@ -930,12 +944,25 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     .validate()) {
                                                   return;
                                                 }
+                                                if (passwordController.text !=
+                                                    passwordConfirmController
+                                                        .text) {
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    SnackBar(
+                                                      content: Text(
+                                                        "Passwords don't match!",
+                                                      ),
+                                                    ),
+                                                  );
+                                                  return;
+                                                }
+
                                                 final user =
-                                                    await signInWithEmail(
+                                                    await createAccountWithEmail(
                                                   context,
-                                                  emailAddressLoginController
-                                                      .text,
-                                                  passwordLoginController.text,
+                                                  emailAddressController.text,
+                                                  passwordController.text,
                                                 );
                                                 if (user == null) {
                                                   return;
@@ -945,7 +972,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   context,
                                                   MaterialPageRoute(
                                                     builder: (context) =>
-                                                        RegistrationWidget(),
+                                                        SocialMediaWidget(),
                                                   ),
                                                 );
                                               } finally {

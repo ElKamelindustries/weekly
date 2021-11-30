@@ -1,4 +1,4 @@
-# timeline_weekly
+# weekly
 
 A new Flutter project.
 

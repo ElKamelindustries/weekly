@@ -5,7 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'auth/firebase_user_provider.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
-import 'package:timeline_weekly/login/login_widget.dart';
+import 'package:weekly/auth_page/auth_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'home_page/home_page_widget.dart';
@@ -25,20 +25,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Stream<TimelineWeeklyFirebaseUser> userStream;
-  TimelineWeeklyFirebaseUser initialUser;
+  Stream<WeeklyFirebaseUser> userStream;
+  WeeklyFirebaseUser initialUser;
 
   @override
   void initState() {
     super.initState();
-    userStream = timelineWeeklyFirebaseUserStream()
+    userStream = weeklyFirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'timelineWeekly',
+      title: 'weekly',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
             )
           : currentUser.loggedIn
               ? NavBarPage()
-              : LoginWidget(),
+              : AuthPageWidget(),
     );
   }
 }
