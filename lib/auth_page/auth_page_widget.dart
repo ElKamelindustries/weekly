@@ -4,7 +4,6 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
 import '../social_media/social_media_widget.dart';
-import '../test/test_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -370,21 +369,9 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 20, 0, 0),
                                           child: FFButtonWidget(
-                                            onPressed: () async {
-                                              setState(
-                                                  () => _loadingButton2 = true);
-                                              try {
-                                                await Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        TestWidget(),
-                                                  ),
-                                                );
-                                              } finally {
-                                                setState(() =>
-                                                    _loadingButton2 = false);
-                                              }
+                                            onPressed: () {
+                                              print(
+                                                  'Button-ForgotPassword pressed ...');
                                             },
                                             text: 'Forgot Password?',
                                             options: FFButtonOptions(

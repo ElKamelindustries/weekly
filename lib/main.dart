@@ -3,7 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'auth/firebase_user_provider.dart';
-
+import 'auth/auth_util.dart';
+import 'backend/push_notifications/push_notifications_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:weekly/auth_page/auth_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
@@ -27,12 +28,21 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Stream<WeeklyFirebaseUser> userStream;
   WeeklyFirebaseUser initialUser;
+  final authUserSub = authenticatedUserStream.listen((_) {});
+  final fcmTokenSub = fcmTokenUserStream.listen((_) {});
 
   @override
   void initState() {
     super.initState();
     userStream = weeklyFirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
+  }
+
+  @override
+  void dispose() {
+    authUserSub.cancel();
+    fcmTokenSub.cancel();
+    super.dispose();
   }
 
   @override
@@ -57,7 +67,7 @@ class _MyAppState extends State<MyApp> {
               ),
             )
           : currentUser.loggedIn
-              ? NavBarPage()
+              ? PushNotificationsHandler(child: NavBarPage())
               : AuthPageWidget(),
     );
   }
