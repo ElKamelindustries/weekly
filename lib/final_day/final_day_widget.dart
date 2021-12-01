@@ -43,7 +43,7 @@ class _FinalDayWidgetState extends State<FinalDayWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                   child: Material(
                     color: Colors.transparent,
-                    elevation: 3,
+                    elevation: 5,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -109,14 +109,14 @@ class _FinalDayWidgetState extends State<FinalDayWidget> {
                                       textStyle:
                                           FlutterFlowTheme.subtitle2.override(
                                         fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        fontSize: 23,
+                                        color: Color(0xFFE6E6E6),
+                                        fontSize: 25,
                                         fontWeight: FontWeight.w600,
                                       ),
                                       elevation: 3,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1,
+                                        width: 2,
                                       ),
                                       borderRadius: 8,
                                     ),
@@ -130,18 +130,18 @@ class _FinalDayWidgetState extends State<FinalDayWidget> {
                                     options: FFButtonOptions(
                                       width: 150,
                                       height: 60,
-                                      color: Color(0x0003CE9F),
+                                      color: Color(0xFFF2BFB2),
                                       textStyle:
                                           FlutterFlowTheme.subtitle2.override(
                                         fontFamily: 'Poppins',
-                                        color: Color(0xFF413369),
+                                        color: Color(0xFFB45A42),
                                         fontSize: 23,
                                         fontWeight: FontWeight.w600,
                                       ),
                                       elevation: 3,
                                       borderSide: BorderSide(
                                         color: Color(0xFFB45A42),
-                                        width: 3,
+                                        width: 2,
                                       ),
                                       borderRadius: 8,
                                     ),
