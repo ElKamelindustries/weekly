@@ -3,7 +3,7 @@ import 'package:rxdart/rxdart.dart';
 
 class WeeklyFirebaseUser {
   WeeklyFirebaseUser(this.user);
-  final User user;
+  User user;
   bool get loggedIn => user != null;
 }
 

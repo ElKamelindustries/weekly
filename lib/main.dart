@@ -12,6 +12,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'home_page/home_page_widget.dart';
 import 'profile_settings/profile_settings_widget.dart';
 import 'profile2/profile2_widget.dart';
+import 'game_page/game_page_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -98,6 +99,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'HomePage': HomePageWidget(),
       'ProfileSettings': ProfileSettingsWidget(),
       'Profile2': Profile2Widget(),
+      'GamePage': GamePageWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
@@ -134,6 +136,14 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             activeIcon: Icon(
               Icons.home,
+              size: 24,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
               size: 24,
             ),
             label: 'Home',

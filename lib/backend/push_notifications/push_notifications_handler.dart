@@ -16,6 +16,8 @@ import '../../hint_page/hint_page_widget.dart';
 import '../../chat/chat_widget.dart';
 import '../../chat_copy/chat_copy_widget.dart';
 import '../../final_day/final_day_widget.dart';
+import '../../game_page1/game_page1_widget.dart';
+import '../../never_have_overview/never_have_overview_widget.dart';
 
 class PushNotificationsHandler extends StatefulWidget {
   const PushNotificationsHandler(
@@ -98,6 +100,9 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
             data, 'chatUser', UsersRecord.serializer),
       ),
   'FinalDay': (data) async => FinalDayWidget(),
+  'GamePage': (data) async => NavBarPage(initialPage: 'GamePageWidget'),
+  'GamePage1': (data) async => GamePage1Widget(),
+  'NeverHaveOverview': (data) async => NeverHaveOverviewWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>
