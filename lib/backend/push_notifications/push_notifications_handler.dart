@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'serialization_util.dart';
 import '../backend.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
@@ -12,10 +13,11 @@ import '../../main.dart';
 import '../../auth_page/auth_page_widget.dart';
 import '../../social_media/social_media_widget.dart';
 import '../../personal_questions/personal_questions_widget.dart';
-import '../../hint_page/hint_page_widget.dart';
+import '../../match_profile/match_profile_widget.dart';
 import '../../chat/chat_widget.dart';
 import '../../chat_copy/chat_copy_widget.dart';
 import '../../final_day/final_day_widget.dart';
+import '../../game_page/game_page_widget.dart';
 import '../../game_page1/game_page1_widget.dart';
 import '../../never_have_overview/never_have_overview_widget.dart';
 
@@ -90,7 +92,7 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'AuthPage': (data) async => AuthPageWidget(),
   'SocialMedia': (data) async => SocialMediaWidget(),
   'PersonalQuestions': (data) async => PersonalQuestionsWidget(),
-  'HintPage': (data) async => HintPageWidget(),
+  'MatchProfile': (data) async => MatchProfileWidget(),
   'Chat': (data) async => ChatWidget(
         chatUser: await getDocumentParameter(
             data, 'chatUser', UsersRecord.serializer),
@@ -100,7 +102,7 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
             data, 'chatUser', UsersRecord.serializer),
       ),
   'FinalDay': (data) async => FinalDayWidget(),
-  'GamePage': (data) async => NavBarPage(initialPage: 'GamePageWidget'),
+  'GamePage': (data) async => GamePageWidget(),
   'GamePage1': (data) async => GamePage1Widget(),
   'NeverHaveOverview': (data) async => NeverHaveOverviewWidget(),
 };
@@ -116,67 +118,9 @@ Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {
         parameterDataStr.isEmpty) {
       return {};
     }
-    return json.decode(parameterDataStr) as Map<String, dynamic>;
+    return jsonDecode(parameterDataStr) as Map<String, dynamic>;
   } catch (e) {
     print('Error parsing parameter data: $e');
     return {};
   }
-}
-
-T getParameter<T>(Map<String, dynamic> data, String paramName) {
-  try {
-    if (!data.containsKey(paramName)) {
-      return null;
-    }
-    final param = data[paramName];
-    switch (T) {
-      case String:
-        return param;
-      case double:
-        return param.toDouble();
-      case DateTime:
-        return DateTime.fromMillisecondsSinceEpoch(param) as T;
-      case LatLng:
-        return latLngFromString(param) as T;
-    }
-    if (param is String) {
-      return FirebaseFirestore.instance.doc(param) as T;
-    }
-    return param;
-  } catch (e) {
-    print('Error parsing parameter "$paramName": $e');
-    return null;
-  }
-}
-
-Future<T> getDocumentParameter<T>(
-    Map<String, dynamic> data, String paramName, Serializer<T> serializer) {
-  if (!data.containsKey(paramName)) {
-    return null;
-  }
-  return FirebaseFirestore.instance
-      .doc(data[paramName])
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s)));
-}
-
-final latRegex = RegExp(
-    r'^(+|-)?(?:90(?:(?:.0{1,7})?)|(?:[0-9]|[1-8][0-9])(?:(?:.[0-9]{1,7})?))$');
-final lngRegex = RegExp(
-    r'^(+|-)?(?:180(?:(?:.0{1,7})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:.[0-9]{1,7})?))$');
-
-LatLng latLngFromString(String latLngStr) {
-  final pieces = latLngStr.split(',');
-  if (pieces.length != 2) {
-    return null;
-  }
-  final lat = pieces[0].trim();
-  final lng = pieces[1].trim();
-  if (!latRegex.hasMatch(lat)) {
-    return null;
-  }
-  if (!lngRegex.hasMatch(lng)) {
-    return null;
-  }
-  return LatLng(double.parse(lat), double.parse(lng));
 }

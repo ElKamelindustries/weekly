@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HintPageWidget extends StatefulWidget {
-  const HintPageWidget({Key key}) : super(key: key);
+class MatchProfileWidget extends StatefulWidget {
+  const MatchProfileWidget({Key key}) : super(key: key);
 
   @override
-  _HintPageWidgetState createState() => _HintPageWidgetState();
+  _MatchProfileWidgetState createState() => _MatchProfileWidgetState();
 }
 
-class _HintPageWidgetState extends State<HintPageWidget> {
+class _MatchProfileWidgetState extends State<MatchProfileWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

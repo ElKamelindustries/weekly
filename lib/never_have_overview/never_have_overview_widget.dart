@@ -2,6 +2,8 @@ import '../components/spacer10_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../main.dart';
+import '../match_profile/match_profile_widget.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -598,60 +600,124 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      height: MediaQuery.of(context).size.height * 1,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFFB0B85),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(30),
-                          bottomRight: Radius.circular(0),
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(0),
-                        ),
-                      ),
-                      child: Stack(
-                        children: [
-                          Align(
-                            alignment: AlignmentDirectional(-1, 0),
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                              child: FlutterFlowIconButton(
-                                borderColor: Colors.transparent,
-                                borderRadius: 100,
-                                buttonSize: 60,
-                                fillColor: FlutterFlowTheme.tertiaryColor,
-                                icon: Icon(
-                                  Icons.arrow_back,
-                                  color: FlutterFlowTheme.primaryColor,
-                                  size: 50,
-                                ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
-                                },
-                              ),
-                            ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.45,
+                        height: MediaQuery.of(context).size.height * 1,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFB0B85),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(0),
+                            topLeft: Radius.circular(30),
+                            topRight: Radius.circular(0),
                           ),
-                          Align(
-                            alignment: AlignmentDirectional(0.5, 0),
-                            child: Text(
-                              'Timeline',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w600,
+                        ),
+                        child: InkWell(
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    NavBarPage(initialPage: 'HomePage'),
                               ),
-                            ),
-                          )
-                        ],
+                            );
+                          },
+                          child: Stack(
+                            children: [
+                              Align(
+                                alignment: AlignmentDirectional(-1, 0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5, 0, 0, 0),
+                                  child: FlutterFlowIconButton(
+                                    borderColor: Colors.transparent,
+                                    borderRadius: 100,
+                                    buttonSize: 60,
+                                    fillColor: FlutterFlowTheme.tertiaryColor,
+                                    icon: Icon(
+                                      Icons.arrow_back,
+                                      color: FlutterFlowTheme.primaryColor,
+                                      size: 50,
+                                    ),
+                                    onPressed: () {
+                                      print('IconButton pressed ...');
+                                    },
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.5, 0),
+                                child: Text(
+                                  'Timeline',
+                                  style: FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.45,
                       height: 100,
                       decoration: BoxDecoration(
-                        color: Color(0xFFEEEEEE),
-                        borderRadius: BorderRadius.circular(30),
+                        color: Color(0xFFFB0B85),
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(30),
+                          topLeft: Radius.circular(0),
+                          topRight: Radius.circular(30),
+                        ),
+                      ),
+                      child: InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MatchProfileWidget(),
+                            ),
+                          );
+                        },
+                        child: Stack(
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(1, 0),
+                              child: Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                child: FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 100,
+                                  buttonSize: 60,
+                                  fillColor: FlutterFlowTheme.tertiaryColor,
+                                  icon: Icon(
+                                    Icons.arrow_forward,
+                                    color: FlutterFlowTheme.primaryColor,
+                                    size: 50,
+                                  ),
+                                  onPressed: () {
+                                    print('IconButton pressed ...');
+                                  },
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.5, 0),
+                              child: Text(
+                                'Match',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],

@@ -1,7 +1,7 @@
 import '../components/spacer10_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../hint_page/hint_page_widget.dart';
+import '../match_profile/match_profile_widget.dart';
 import '../never_have_overview/never_have_overview_widget.dart';
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:expandable/expandable.dart';
@@ -121,7 +121,7 @@ class _ActivityStackWidgetState extends State<ActivityStackWidget> {
                             type: PageTransitionType.leftToRight,
                             duration: Duration(milliseconds: 100),
                             reverseDuration: Duration(milliseconds: 100),
-                            child: HintPageWidget(),
+                            child: MatchProfileWidget(),
                           ),
                         );
                       },
@@ -155,7 +155,7 @@ class _ActivityStackWidgetState extends State<ActivityStackWidget> {
                             type: PageTransitionType.leftToRight,
                             duration: Duration(milliseconds: 1),
                             reverseDuration: Duration(milliseconds: 1),
-                            child: HintPageWidget(),
+                            child: MatchProfileWidget(),
                           ),
                         );
                       },
