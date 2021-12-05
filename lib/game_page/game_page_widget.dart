@@ -15,9 +15,6 @@ class GamePageWidget extends StatefulWidget {
 
 class _GamePageWidgetState extends State<GamePageWidget> {
   PageController pageViewController;
-  bool _loadingButton1 = false;
-  bool _loadingButton2 = false;
-  bool _loadingButton3 = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -157,7 +154,6 @@ class _GamePageWidgetState extends State<GamePageWidget> {
                                             ),
                                             borderRadius: 12,
                                           ),
-                                          loading: _loadingButton1,
                                         ),
                                       )
                                     ],
@@ -264,7 +260,6 @@ class _GamePageWidgetState extends State<GamePageWidget> {
                                             ),
                                             borderRadius: 12,
                                           ),
-                                          loading: _loadingButton2,
                                         ),
                                       )
                                     ],
@@ -371,7 +366,6 @@ class _GamePageWidgetState extends State<GamePageWidget> {
                                             ),
                                             borderRadius: 12,
                                           ),
-                                          loading: _loadingButton3,
                                         ),
                                       )
                                     ],

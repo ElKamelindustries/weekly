@@ -14,7 +14,6 @@ class ProfileSettingsWidget extends StatefulWidget {
 }
 
 class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
-  bool _loadingButton = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -479,7 +478,6 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       ),
                       borderRadius: 8,
                     ),
-                    loading: _loadingButton,
                   )
                 ],
               ),

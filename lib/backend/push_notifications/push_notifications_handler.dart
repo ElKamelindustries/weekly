@@ -15,11 +15,11 @@ import '../../social_media/social_media_widget.dart';
 import '../../personal_questions/personal_questions_widget.dart';
 import '../../match_profile/match_profile_widget.dart';
 import '../../chat/chat_widget.dart';
-import '../../chat_copy/chat_copy_widget.dart';
 import '../../final_day/final_day_widget.dart';
 import '../../game_page/game_page_widget.dart';
 import '../../game_page1/game_page1_widget.dart';
 import '../../never_have_overview/never_have_overview_widget.dart';
+import '../../forgot_password1/forgot_password1_widget.dart';
 
 class PushNotificationsHandler extends StatefulWidget {
   const PushNotificationsHandler(
@@ -97,14 +97,11 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
         chatUser: await getDocumentParameter(
             data, 'chatUser', UsersRecord.serializer),
       ),
-  'ChatCopy': (data) async => ChatCopyWidget(
-        chatUser: await getDocumentParameter(
-            data, 'chatUser', UsersRecord.serializer),
-      ),
   'FinalDay': (data) async => FinalDayWidget(),
   'GamePage': (data) async => GamePageWidget(),
   'GamePage1': (data) async => GamePage1Widget(),
   'NeverHaveOverview': (data) async => NeverHaveOverviewWidget(),
+  'ForgotPassword1': (data) async => ForgotPassword1Widget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

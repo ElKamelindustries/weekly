@@ -13,8 +13,6 @@ class FinalDayWidget extends StatefulWidget {
 }
 
 class _FinalDayWidgetState extends State<FinalDayWidget> {
-  bool _loadingButton1 = false;
-  bool _loadingButton2 = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -92,62 +90,72 @@ class _FinalDayWidgetState extends State<FinalDayWidget> {
                                   ],
                                 ),
                               ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Yes',
-                                    options: FFButtonOptions(
-                                      width: 150,
-                                      height: 60,
-                                      color: Color(0xFFB45A42),
-                                      textStyle:
-                                          FlutterFlowTheme.subtitle2.override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFFE6E6E6),
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w600,
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 0, 10),
+                                      child: FFButtonWidget(
+                                        onPressed: () {
+                                          print('Button pressed ...');
+                                        },
+                                        text: 'Yes',
+                                        options: FFButtonOptions(
+                                          width: 100,
+                                          height: 40,
+                                          color: Color(0xFFB45A42),
+                                          textStyle: FlutterFlowTheme.subtitle2
+                                              .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFFE6E6E6),
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                          elevation: 3,
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 2,
+                                          ),
+                                          borderRadius: 8,
+                                        ),
                                       ),
-                                      elevation: 3,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 2,
-                                      ),
-                                      borderRadius: 8,
                                     ),
-                                    loading: _loadingButton1,
-                                  ),
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'No',
-                                    options: FFButtonOptions(
-                                      width: 150,
-                                      height: 60,
-                                      color: Color(0xFFF2BFB2),
-                                      textStyle:
-                                          FlutterFlowTheme.subtitle2.override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFFB45A42),
-                                        fontSize: 23,
-                                        fontWeight: FontWeight.w600,
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 0, 10),
+                                      child: FFButtonWidget(
+                                        onPressed: () {
+                                          print('Button pressed ...');
+                                        },
+                                        text: 'No',
+                                        options: FFButtonOptions(
+                                          width: 100,
+                                          height: 40,
+                                          color: Color(0xFFF2BFB2),
+                                          textStyle: FlutterFlowTheme.subtitle2
+                                              .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFFB45A42),
+                                            fontSize: 23,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                          elevation: 3,
+                                          borderSide: BorderSide(
+                                            color: Color(0xFFB45A42),
+                                            width: 2,
+                                          ),
+                                          borderRadius: 8,
+                                        ),
                                       ),
-                                      elevation: 3,
-                                      borderSide: BorderSide(
-                                        color: Color(0xFFB45A42),
-                                        width: 2,
-                                      ),
-                                      borderRadius: 8,
-                                    ),
-                                    loading: _loadingButton2,
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               )
                             ],
                           ),

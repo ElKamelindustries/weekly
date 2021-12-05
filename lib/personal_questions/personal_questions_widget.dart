@@ -19,7 +19,6 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
   String catagoryFiltersValue;
   double sliderValue;
   String radioButtonValue;
-  bool _loadingButton = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -56,29 +55,11 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Card(
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            color: Colors.transparent,
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(0),
-                            ),
-                            child: Align(
-                              alignment: AlignmentDirectional(0, 0),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                                child: Text(
-                                  'Week.ly',
-                                  style: FlutterFlowTheme.title1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF403667),
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
+                          Image.asset(
+                            'assets/images/logo_arianna.png',
+                            width: 240,
+                            height: 60,
+                            fit: BoxFit.cover,
                           )
                         ],
                       ),
@@ -242,18 +223,13 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          setState(() => _loadingButton = true);
-                          try {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    NavBarPage(initialPage: 'HomePage'),
-                              ),
-                            );
-                          } finally {
-                            setState(() => _loadingButton = false);
-                          }
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  NavBarPage(initialPage: 'HomePage'),
+                            ),
+                          );
                         },
                         text: 'Next',
                         options: FFButtonOptions(
@@ -273,7 +249,6 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                           ),
                           borderRadius: 8,
                         ),
-                        loading: _loadingButton,
                       ),
                     )
                   ],

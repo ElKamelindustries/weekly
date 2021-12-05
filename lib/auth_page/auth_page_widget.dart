@@ -2,6 +2,7 @@ import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../forgot_password1/forgot_password1_widget.dart';
 import '../main.dart';
 import '../social_media/social_media_widget.dart';
 import 'package:flutter/material.dart';
@@ -25,12 +26,9 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
   bool passwordVisibility;
   TextEditingController passwordConfirmController;
   bool passwordConfirmVisibility;
-  bool _loadingButton3 = false;
   TextEditingController emailAddressLoginController;
   TextEditingController passwordLoginController;
   bool passwordLoginVisibility;
-  bool _loadingButton1 = false;
-  bool _loadingButton2 = false;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -94,21 +92,11 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(0),
                               ),
-                              child: Align(
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 20, 0, 0),
-                                  child: Text(
-                                    'Week.ly',
-                                    style: FlutterFlowTheme.title1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF403667),
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
+                              child: Image.asset(
+                                'assets/images/logo_arianna.png',
+                                width: 240,
+                                height: 60,
+                                fit: BoxFit.cover,
                               ),
                             )
                           ],
@@ -307,39 +295,32 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                                   0, 24, 0, 0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              setState(
-                                                  () => _loadingButton1 = true);
-                                              try {
-                                                if (!formKey.currentState
-                                                    .validate()) {
-                                                  return;
-                                                }
-                                                final user =
-                                                    await signInWithEmail(
-                                                  context,
-                                                  emailAddressLoginController
-                                                      .text,
-                                                  passwordLoginController.text,
-                                                );
-                                                if (user == null) {
-                                                  return;
-                                                }
-
-                                                await Navigator
-                                                    .pushAndRemoveUntil(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        NavBarPage(
-                                                            initialPage:
-                                                                'HomePage'),
-                                                  ),
-                                                  (r) => false,
-                                                );
-                                              } finally {
-                                                setState(() =>
-                                                    _loadingButton1 = false);
+                                              if (!formKey.currentState
+                                                  .validate()) {
+                                                return;
                                               }
+                                              final user =
+                                                  await signInWithEmail(
+                                                context,
+                                                emailAddressLoginController
+                                                    .text,
+                                                passwordLoginController.text,
+                                              );
+                                              if (user == null) {
+                                                return;
+                                              }
+
+                                              await Navigator
+                                                  .pushAndRemoveUntil(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      NavBarPage(
+                                                          initialPage:
+                                                              'HomePage'),
+                                                ),
+                                                (r) => false,
+                                              );
                                             },
                                             text: 'Login',
                                             options: FFButtonOptions(
@@ -361,7 +342,6 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                               ),
                                               borderRadius: 8,
                                             ),
-                                            loading: _loadingButton1,
                                           ),
                                         ),
                                         Padding(
@@ -369,9 +349,14 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 20, 0, 0),
                                           child: FFButtonWidget(
-                                            onPressed: () {
-                                              print(
-                                                  'Button-ForgotPassword pressed ...');
+                                            onPressed: () async {
+                                              await Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ForgotPassword1Widget(),
+                                                ),
+                                              );
                                             },
                                             text: 'Forgot Password?',
                                             options: FFButtonOptions(
@@ -393,7 +378,6 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                               ),
                                               borderRadius: 8,
                                             ),
-                                            loading: _loadingButton2,
                                           ),
                                         ),
                                         Padding(
@@ -924,48 +908,41 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                                   0, 24, 0, 0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              setState(
-                                                  () => _loadingButton3 = true);
-                                              try {
-                                                if (!formKey.currentState
-                                                    .validate()) {
-                                                  return;
-                                                }
-                                                if (passwordController.text !=
-                                                    passwordConfirmController
-                                                        .text) {
-                                                  ScaffoldMessenger.of(context)
-                                                      .showSnackBar(
-                                                    SnackBar(
-                                                      content: Text(
-                                                        "Passwords don't match!",
-                                                      ),
+                                              if (!formKey.currentState
+                                                  .validate()) {
+                                                return;
+                                              }
+                                              if (passwordController.text !=
+                                                  passwordConfirmController
+                                                      .text) {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      "Passwords don't match!",
                                                     ),
-                                                  );
-                                                  return;
-                                                }
-
-                                                final user =
-                                                    await createAccountWithEmail(
-                                                  context,
-                                                  emailAddressController.text,
-                                                  passwordController.text,
-                                                );
-                                                if (user == null) {
-                                                  return;
-                                                }
-
-                                                await Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        SocialMediaWidget(),
                                                   ),
                                                 );
-                                              } finally {
-                                                setState(() =>
-                                                    _loadingButton3 = false);
+                                                return;
                                               }
+
+                                              final user =
+                                                  await createAccountWithEmail(
+                                                context,
+                                                emailAddressController.text,
+                                                passwordController.text,
+                                              );
+                                              if (user == null) {
+                                                return;
+                                              }
+
+                                              await Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      SocialMediaWidget(),
+                                                ),
+                                              );
                                             },
                                             text: 'Next',
                                             options: FFButtonOptions(
@@ -987,7 +964,6 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                               ),
                                               borderRadius: 8,
                                             ),
-                                            loading: _loadingButton3,
                                           ),
                                         )
                                       ],

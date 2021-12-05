@@ -13,12 +13,6 @@ class GamePage1Widget extends StatefulWidget {
 }
 
 class _GamePage1WidgetState extends State<GamePage1Widget> {
-  bool _loadingButton1 = false;
-  bool _loadingButton2 = false;
-  bool _loadingButton3 = false;
-  bool _loadingButton4 = false;
-  bool _loadingButton5 = false;
-  bool _loadingButton6 = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -54,7 +48,6 @@ class _GamePage1WidgetState extends State<GamePage1Widget> {
                       ),
                       borderRadius: 12,
                     ),
-                    loading: _loadingButton1,
                   ),
                   FFButtonWidget(
                     onPressed: () {
@@ -75,7 +68,6 @@ class _GamePage1WidgetState extends State<GamePage1Widget> {
                       ),
                       borderRadius: 12,
                     ),
-                    loading: _loadingButton2,
                   )
                 ],
               ),
@@ -154,7 +146,6 @@ class _GamePage1WidgetState extends State<GamePage1Widget> {
                                 ),
                                 borderRadius: 12,
                               ),
-                              loading: _loadingButton3,
                             )
                           ],
                         )
@@ -182,7 +173,6 @@ class _GamePage1WidgetState extends State<GamePage1Widget> {
                             ),
                             borderRadius: 12,
                           ),
-                          loading: _loadingButton4,
                         )
                       ],
                     )
@@ -215,7 +205,6 @@ class _GamePage1WidgetState extends State<GamePage1Widget> {
                       ),
                       borderRadius: 12,
                     ),
-                    loading: _loadingButton5,
                   ),
                   FFButtonWidget(
                     onPressed: () {
@@ -236,7 +225,6 @@ class _GamePage1WidgetState extends State<GamePage1Widget> {
                       ),
                       borderRadius: 12,
                     ),
-                    loading: _loadingButton6,
                   )
                 ],
               ),

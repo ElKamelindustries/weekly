@@ -16,7 +16,6 @@ class SocialMediaWidget extends StatefulWidget {
 }
 
 class _SocialMediaWidgetState extends State<SocialMediaWidget> {
-  bool _loadingButton = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -60,21 +59,11 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(0),
                             ),
-                            child: Align(
-                              alignment: AlignmentDirectional(0, 0),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                                child: Text(
-                                  'Week.ly',
-                                  style: FlutterFlowTheme.title1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF403667),
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
+                            child: Image.asset(
+                              'assets/images/logo_arianna.png',
+                              width: 240,
+                              height: 60,
+                              fit: BoxFit.cover,
                             ),
                           )
                         ],
@@ -192,17 +181,12 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          setState(() => _loadingButton = true);
-                          try {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => PersonalQuestionsWidget(),
-                              ),
-                            );
-                          } finally {
-                            setState(() => _loadingButton = false);
-                          }
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PersonalQuestionsWidget(),
+                            ),
+                          );
                         },
                         text: 'Next',
                         options: FFButtonOptions(
@@ -222,7 +206,6 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                           ),
                           borderRadius: 8,
                         ),
-                        loading: _loadingButton,
                       ),
                     )
                   ],
