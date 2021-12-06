@@ -1,18 +1,22 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ForgotPassword1Widget extends StatefulWidget {
-  const ForgotPassword1Widget({Key key}) : super(key: key);
+class ForgotPasswordVerifyCodeWidget extends StatefulWidget {
+  const ForgotPasswordVerifyCodeWidget({Key key}) : super(key: key);
 
   @override
-  _ForgotPassword1WidgetState createState() => _ForgotPassword1WidgetState();
+  _ForgotPasswordVerifyCodeWidgetState createState() =>
+      _ForgotPasswordVerifyCodeWidgetState();
 }
 
-class _ForgotPassword1WidgetState extends State<ForgotPassword1Widget> {
+class _ForgotPasswordVerifyCodeWidgetState
+    extends State<ForgotPasswordVerifyCodeWidget> {
   TextEditingController phoneNumberController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -47,16 +51,19 @@ class _ForgotPassword1WidgetState extends State<ForgotPassword1Widget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/images/logo_arianna.png',
-                      width: 240,
-                      height: 60,
-                      fit: BoxFit.cover,
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                      child: Image.asset(
+                        'assets/images/logo_arianna.png',
+                        width: 240,
+                        height: 60,
+                        fit: BoxFit.cover,
+                      ),
                     )
                   ],
                 ),
@@ -100,7 +107,7 @@ class _ForgotPassword1WidgetState extends State<ForgotPassword1Widget> {
                                 },
                                 child: Icon(
                                   Icons.arrow_back_rounded,
-                                  color: Color(0xFF090F13),
+                                  color: Color(0xFF403667),
                                   size: 24,
                                 ),
                               ),
@@ -108,10 +115,10 @@ class _ForgotPassword1WidgetState extends State<ForgotPassword1Widget> {
                           ),
                           Expanded(
                             child: Text(
-                              'Phone Sign In',
+                              'Verify Code',
                               style: FlutterFlowTheme.title1.override(
                                 fontFamily: 'Lexend Deca',
-                                color: Color(0xFF090F13),
+                                color: Color(0xFF403667),
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -131,14 +138,14 @@ class _ForgotPassword1WidgetState extends State<ForgotPassword1Widget> {
                               controller: phoneNumberController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Your Phone Number...',
+                                labelText: 'Enter 6 digit code here...',
                                 labelStyle: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Lexend Deca',
                                   color: Color(0xFF95A1AC),
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                 ),
-                                hintText: '+1 (204) 204-2056',
+                                hintText: '000000',
                                 hintStyle: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Lexend Deca',
                                   color: Color(0xFF95A1AC),
@@ -182,10 +189,33 @@ class _ForgotPassword1WidgetState extends State<ForgotPassword1Widget> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              if (phoneNumberController.text.isEmpty) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Enter SMS verification code.'),
+                                  ),
+                                );
+                                return;
+                              }
+                              final phoneVerifiedUser = await verifySmsCode(
+                                context: context,
+                                smsCode: phoneNumberController.text,
+                              );
+                              if (phoneVerifiedUser == null) {
+                                return;
+                              }
+                              await Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      NavBarPage(initialPage: 'HomePage'),
+                                ),
+                                (r) => false,
+                              );
                             },
-                            text: 'Send Code',
+                            text: 'Verify',
                             options: FFButtonOptions(
                               width: 130,
                               height: 50,

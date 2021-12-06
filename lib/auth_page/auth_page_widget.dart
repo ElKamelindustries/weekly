@@ -2,7 +2,7 @@ import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../forgot_password1/forgot_password1_widget.dart';
+import '../forgot_password_phone/forgot_password_phone_widget.dart';
 import '../main.dart';
 import '../social_media/social_media_widget.dart';
 import 'package:flutter/material.dart';
@@ -354,7 +354,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                                 context,
                                                 MaterialPageRoute(
                                                   builder: (context) =>
-                                                      ForgotPassword1Widget(),
+                                                      ForgotPasswordPhoneWidget(),
                                                 ),
                                               );
                                             },

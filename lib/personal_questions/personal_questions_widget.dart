@@ -1,10 +1,12 @@
+import '../flutter_flow/flutter_flow_count_controller.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
+import '../personal_questions2/personal_questions2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PersonalQuestionsWidget extends StatefulWidget {
@@ -17,7 +19,8 @@ class PersonalQuestionsWidget extends StatefulWidget {
 
 class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
   String catagoryFiltersValue;
-  double sliderValue;
+  int countControllerValue1;
+  int countControllerValue2;
   String radioButtonValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -72,56 +75,154 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          'Age',
-                          style: FlutterFlowTheme.bodyText2.override(
-                            fontFamily: 'Poppins',
-                            color: Color(0xFF424242),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        )
-                      ],
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'Age',
+                            style: FlutterFlowTheme.bodyText2.override(
+                              fontFamily: 'Poppins',
+                              color: Color(0xFF424242),
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Expanded(
-                          child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
-                            child: Slider(
-                              activeColor: Color(0xFF403667),
-                              inactiveColor: Color(0xFFDBE2E7),
-                              min: 25,
-                              max: 250,
-                              value: sliderValue ??= 125,
-                              label: sliderValue.toString(),
-                              divisions: 23,
-                              onChanged: (newValue) {
-                                setState(() => sliderValue = newValue);
-                              },
+                        Container(
+                          width: 160,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(25),
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: Color(0xFF9E9E9E),
+                              width: 1,
                             ),
                           ),
+                          child: FlutterFlowCountController(
+                            decrementIconBuilder: (enabled) => FaIcon(
+                              FontAwesomeIcons.minus,
+                              color: enabled
+                                  ? Color(0xFF403667)
+                                  : Color(0xFFEEEEEE),
+                              size: 20,
+                            ),
+                            incrementIconBuilder: (enabled) => FaIcon(
+                              FontAwesomeIcons.plus,
+                              color: enabled
+                                  ? Color(0xFF403667)
+                                  : Color(0xFFEEEEEE),
+                              size: 20,
+                            ),
+                            countBuilder: (count) => Text(
+                              count.toString(),
+                              style: GoogleFonts.getFont(
+                                'Roboto',
+                                color: Color(0xFF403667),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              ),
+                            ),
+                            count: countControllerValue1 ??= 18,
+                            updateCount: (count) =>
+                                setState(() => countControllerValue1 = count),
+                            stepSize: 1,
+                            minimum: 18,
+                            maximum: 100,
+                          ),
                         )
                       ],
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'Height (in cm)',
+                            style: FlutterFlowTheme.bodyText2.override(
+                              fontFamily: 'Poppins',
+                              color: Color(0xFF424242),
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text(
-                          'Gender',
-                          style: FlutterFlowTheme.bodyText2.override(
-                            fontFamily: 'Poppins',
-                            color: Color(0xFF424242),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
+                        Container(
+                          width: 160,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(25),
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: Color(0xFF9E9E9E),
+                              width: 1,
+                            ),
+                          ),
+                          child: FlutterFlowCountController(
+                            decrementIconBuilder: (enabled) => FaIcon(
+                              FontAwesomeIcons.minus,
+                              color: enabled
+                                  ? Color(0xFF403667)
+                                  : Color(0xFFEEEEEE),
+                              size: 20,
+                            ),
+                            incrementIconBuilder: (enabled) => FaIcon(
+                              FontAwesomeIcons.plus,
+                              color: enabled
+                                  ? Color(0xFF403667)
+                                  : Color(0xFFEEEEEE),
+                              size: 20,
+                            ),
+                            countBuilder: (count) => Text(
+                              count.toString(),
+                              style: GoogleFonts.getFont(
+                                'Roboto',
+                                color: Color(0xFF403667),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              ),
+                            ),
+                            count: countControllerValue2 ??= 150,
+                            updateCount: (count) =>
+                                setState(() => countControllerValue2 = count),
+                            stepSize: 1,
+                            minimum: 0,
+                            maximum: 250,
                           ),
                         )
                       ],
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'Gender',
+                            style: FlutterFlowTheme.bodyText2.override(
+                              fontFamily: 'Poppins',
+                              color: Color(0xFF424242),
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
@@ -130,12 +231,7 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                         children: [
                           Expanded(
                             child: FlutterFlowRadioButton(
-                              options: [
-                                'Male',
-                                'Female',
-                                'Cateogry 3',
-                                'Category 4'
-                              ],
+                              options: ['Male', 'Female'],
                               onChanged: (value) {
                                 setState(() => catagoryFiltersValue = value);
                               },
@@ -158,22 +254,19 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Another Filter',
-                            style: FlutterFlowTheme.bodyText2.override(
-                              fontFamily: 'Poppins',
-                              color: Color(0xFF424242),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          )
-                        ],
-                      ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          'Sexual Orientation',
+                          style: FlutterFlowTheme.bodyText2.override(
+                            fontFamily: 'Poppins',
+                            color: Color(0xFF424242),
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        )
+                      ],
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
@@ -183,10 +276,10 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                           Expanded(
                             child: FlutterFlowRadioButton(
                               options: [
-                                'Filter 1',
-                                'Filter 2',
-                                'Filter 3',
-                                'Filter 4'
+                                'Heterosexual',
+                                'Gay',
+                                'Lesbian',
+                                'Bisexual'
                               ],
                               onChanged: (value) {
                                 setState(() => radioButtonValue = value);
@@ -219,6 +312,16 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    InkWell(
+                      onTap: () async {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_rounded,
+                        color: Color(0xFF403667),
+                        size: 40,
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                       child: FFButtonWidget(
@@ -226,8 +329,7 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                           await Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  NavBarPage(initialPage: 'HomePage'),
+                              builder: (context) => PersonalQuestions2Widget(),
                             ),
                           );
                         },

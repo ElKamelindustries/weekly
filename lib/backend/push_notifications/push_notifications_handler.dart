@@ -19,7 +19,10 @@ import '../../final_day/final_day_widget.dart';
 import '../../game_page/game_page_widget.dart';
 import '../../game_page1/game_page1_widget.dart';
 import '../../never_have_overview/never_have_overview_widget.dart';
-import '../../forgot_password1/forgot_password1_widget.dart';
+import '../../forgot_password_phone/forgot_password_phone_widget.dart';
+import '../../forgot_password_verify_code/forgot_password_verify_code_widget.dart';
+import '../../personal_questions2/personal_questions2_widget.dart';
+import '../../personal_questions3/personal_questions3_widget.dart';
 
 class PushNotificationsHandler extends StatefulWidget {
   const PushNotificationsHandler(
@@ -101,7 +104,11 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'GamePage': (data) async => GamePageWidget(),
   'GamePage1': (data) async => GamePage1Widget(),
   'NeverHaveOverview': (data) async => NeverHaveOverviewWidget(),
-  'ForgotPassword1': (data) async => ForgotPassword1Widget(),
+  'ForgotPasswordPhone': (data) async => ForgotPasswordPhoneWidget(),
+  'ForgotPasswordVerifyCode': (data) async => ForgotPasswordVerifyCodeWidget(),
+  'PersonalQuestions2': (data) async => PersonalQuestions2Widget(),
+  'PersonalQuestions3': (data) async => PersonalQuestions3Widget(),
+  'AudioGame': (data) async => NavBarPage(initialPage: 'AudioGameWidget'),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>
