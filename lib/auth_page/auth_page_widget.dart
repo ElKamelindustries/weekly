@@ -317,7 +317,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                                   builder: (context) =>
                                                       NavBarPage(
                                                           initialPage:
-                                                              'HomePage'),
+                                                              'HomePage_Full'),
                                                 ),
                                                 (r) => false,
                                               );

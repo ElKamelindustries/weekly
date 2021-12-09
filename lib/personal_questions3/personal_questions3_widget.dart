@@ -326,7 +326,7 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  NavBarPage(initialPage: 'HomePage'),
+                                  NavBarPage(initialPage: 'HomePage_Full'),
                             ),
                           );
                         },

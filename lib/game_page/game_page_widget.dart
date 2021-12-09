@@ -60,22 +60,30 @@ class _GamePageWidgetState extends State<GamePageWidget> {
                                       Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Image.network(
-                                            'https://picsum.photos/seed/92/600',
-                                            width: 130,
-                                            height: 150,
-                                            fit: BoxFit.cover,
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            child: Image.network(
+                                              'https://picsum.photos/seed/92/600',
+                                              width: 130,
+                                              height: 150,
+                                              fit: BoxFit.cover,
+                                            ),
                                           )
                                         ],
                                       ),
                                       Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Image.network(
-                                            'https://picsum.photos/seed/313/600',
-                                            width: 130,
-                                            height: 150,
-                                            fit: BoxFit.cover,
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            child: Image.network(
+                                              'https://picsum.photos/seed/313/600',
+                                              width: 130,
+                                              height: 150,
+                                              fit: BoxFit.cover,
+                                            ),
                                           )
                                         ],
                                       )

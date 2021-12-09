@@ -31,7 +31,6 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * 1,
         decoration: BoxDecoration(
-          color: Color(0xFF14181B),
           image: DecorationImage(
             fit: BoxFit.cover,
             image: Image.asset(

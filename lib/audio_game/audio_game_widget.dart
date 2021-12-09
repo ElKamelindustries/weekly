@@ -314,7 +314,7 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              NavBarPage(initialPage: 'HomePage'),
+                              NavBarPage(initialPage: 'HomePage_Full'),
                         ),
                       );
                     },

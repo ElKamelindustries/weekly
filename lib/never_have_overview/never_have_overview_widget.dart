@@ -620,7 +620,7 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    NavBarPage(initialPage: 'HomePage'),
+                                    NavBarPage(initialPage: 'HomePage_Full'),
                               ),
                             );
                           },

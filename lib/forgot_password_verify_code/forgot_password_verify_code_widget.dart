@@ -210,7 +210,7 @@ class _ForgotPasswordVerifyCodeWidgetState
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      NavBarPage(initialPage: 'HomePage'),
+                                      NavBarPage(initialPage: 'HomePage_Full'),
                                 ),
                                 (r) => false,
                               );

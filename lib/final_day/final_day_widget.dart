@@ -1,6 +1,8 @@
+import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../social_media_share/social_media_share_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,8 +14,27 @@ class FinalDayWidget extends StatefulWidget {
   _FinalDayWidgetState createState() => _FinalDayWidgetState();
 }
 
-class _FinalDayWidgetState extends State<FinalDayWidget> {
+class _FinalDayWidgetState extends State<FinalDayWidget>
+    with TickerProviderStateMixin {
+  final animationsMap = {
+    'imageOnPageLoadAnimation': AnimationInfo(
+      curve: Curves.bounceOut,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 1200,
+      fadeIn: true,
+    ),
+  };
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    startPageLoadAnimations(
+      animationsMap.values
+          .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
+      this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +54,7 @@ class _FinalDayWidgetState extends State<FinalDayWidget> {
                   width: 200,
                   height: 200,
                   fit: BoxFit.cover,
-                ),
+                ).animated([animationsMap['imageOnPageLoadAnimation']]),
               ),
               Align(
                 alignment: AlignmentDirectional(0, 0.76),
@@ -73,7 +94,7 @@ class _FinalDayWidgetState extends State<FinalDayWidget> {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 5, 10),
+                                            5, 0, 5, 15),
                                         child: Text(
                                           'Do you want to share your contact with your partner?',
                                           textAlign: TextAlign.center,
@@ -90,72 +111,66 @@ class _FinalDayWidgetState extends State<FinalDayWidget> {
                                   ],
                                 ),
                               ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 10),
-                                      child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
-                                        text: 'Yes',
-                                        options: FFButtonOptions(
-                                          width: 100,
-                                          height: 40,
-                                          color: Color(0xFFB45A42),
-                                          textStyle: FlutterFlowTheme.subtitle2
-                                              .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFFE6E6E6),
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                          elevation: 3,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 2,
-                                          ),
-                                          borderRadius: 8,
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  FFButtonWidget(
+                                    onPressed: () async {
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              SocialMediaShareWidget(),
                                         ),
+                                      );
+                                    },
+                                    text: 'Yes',
+                                    options: FFButtonOptions(
+                                      width: 100,
+                                      height: 40,
+                                      color: Color(0xFFB45A42),
+                                      textStyle:
+                                          FlutterFlowTheme.subtitle2.override(
+                                        fontFamily: 'Poppins',
+                                        color: Color(0xFFE6E6E6),
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.w600,
                                       ),
+                                      elevation: 3,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 2,
+                                      ),
+                                      borderRadius: 8,
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 10),
-                                      child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
-                                        text: 'No',
-                                        options: FFButtonOptions(
-                                          width: 100,
-                                          height: 40,
-                                          color: Color(0xFFF2BFB2),
-                                          textStyle: FlutterFlowTheme.subtitle2
-                                              .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFFB45A42),
-                                            fontSize: 23,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                          elevation: 3,
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFB45A42),
-                                            width: 2,
-                                          ),
-                                          borderRadius: 8,
-                                        ),
+                                  ),
+                                  FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: 'No',
+                                    options: FFButtonOptions(
+                                      width: 100,
+                                      height: 40,
+                                      color: Color(0xFFF2BFB2),
+                                      textStyle:
+                                          FlutterFlowTheme.subtitle2.override(
+                                        fontFamily: 'Poppins',
+                                        color: Color(0xFFB45A42),
+                                        fontSize: 23,
+                                        fontWeight: FontWeight.w600,
                                       ),
-                                    )
-                                  ],
-                                ),
+                                      elevation: 3,
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFB45A42),
+                                        width: 2,
+                                      ),
+                                      borderRadius: 8,
+                                    ),
+                                  )
+                                ],
                               )
                             ],
                           ),

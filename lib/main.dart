@@ -9,7 +9,8 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:weekly/auth_page/auth_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'home_page/home_page_widget.dart';
+import 'home_page_first/home_page_first_widget.dart';
+import 'home_page_full/home_page_full_widget.dart';
 import 'profile_settings/profile_settings_widget.dart';
 import 'profile2/profile2_widget.dart';
 import 'audio_game/audio_game_widget.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Stream<WeeklyFirebaseUser> userStream;
   WeeklyFirebaseUser initialUser;
+  bool displaySplashImage = true;
   final authUserSub = authenticatedUserStream.listen((_) {});
   final fcmTokenSub = fcmTokenUserStream.listen((_) {});
 
@@ -37,6 +39,8 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     userStream = weeklyFirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
+    Future.delayed(
+        Duration(seconds: 1), () => setState(() => displaySplashImage = false));
   }
 
   @override
@@ -57,7 +61,7 @@ class _MyAppState extends State<MyApp> {
       ],
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: initialUser == null
+      home: initialUser == null || displaySplashImage
           ? Container(
               color: Colors.transparent,
               child: Builder(
@@ -85,7 +89,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'HomePage';
+  String _currentPage = 'HomePage_Full';
 
   @override
   void initState() {
@@ -96,7 +100,8 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'HomePage': HomePageWidget(),
+      'HomePage_First': HomePageFirstWidget(),
+      'HomePage_Full': HomePageFullWidget(),
       'ProfileSettings': ProfileSettingsWidget(),
       'Profile2': Profile2Widget(),
       'AudioGame': AudioGameWidget(),
@@ -105,6 +110,18 @@ class _NavBarPageState extends State<NavBarPage> {
       body: tabs[_currentPage],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.favorite_border,
+              size: 24,
+            ),
+            activeIcon: Icon(
+              Icons.favorite,
+              size: 24,
+            ),
+            label: 'Your person',
+            tooltip: '',
+          ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.favorite_border,

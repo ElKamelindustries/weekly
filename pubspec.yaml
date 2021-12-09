@@ -46,6 +46,7 @@ dependencies:
   intl: 0.17.0
   json_path: 0.2.1
   json_serializable: 4.1.4
+  lottie: 1.2.1
   mime_type: 1.0.0
   page_transition: 2.0.4
   rxdart: 0.26.0

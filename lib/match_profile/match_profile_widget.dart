@@ -1,6 +1,5 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,8 +29,8 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    width: 135,
-                    height: 135,
+                    width: 125,
+                    height: 125,
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
@@ -44,7 +43,31 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(1.49, 1.25),
+              alignment: AlignmentDirectional(0, -1),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                    child: Text(
+                      'Your match',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.title1.override(
+                        fontFamily: 'Oswald',
+                        color: Color(0xFF413369),
+                        fontSize: 30,
+                        fontWeight: FontWeight.w800,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0, 1.01),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 2, 2, 2),
                 child: SingleChildScrollView(
@@ -140,49 +163,38 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    ClipRect(
-                                      child: ImageFiltered(
-                                        imageFilter: ImageFilter.blur(
-                                          sigmaX: 3,
-                                          sigmaY: 3,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8, 6, 6, 6),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Age',
-                                                style: FlutterFlowTheme
-                                                    .subtitle1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Color(0xFFB45A42),
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              Text(
-                                                '25',
-                                                textAlign: TextAlign.start,
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Color(0xFF413369),
-                                                  fontSize: 35,
-                                                  fontWeight: FontWeight.w800,
-                                                ),
-                                              )
-                                            ],
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          8, 6, 6, 6),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Age',
+                                            style: FlutterFlowTheme.subtitle1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFFB45A42),
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
-                                        ),
+                                          Text(
+                                            '???',
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF413369),
+                                              fontSize: 35,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          )
+                                        ],
                                       ),
                                     )
                                   ],
@@ -281,49 +293,38 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    ClipRect(
-                                      child: ImageFiltered(
-                                        imageFilter: ImageFilter.blur(
-                                          sigmaX: 3,
-                                          sigmaY: 3,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8, 6, 6, 6),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Favourite food',
-                                                style: FlutterFlowTheme
-                                                    .subtitle1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Color(0xFFB45A42),
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Pizza',
-                                                textAlign: TextAlign.start,
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Color(0xFF413369),
-                                                  fontSize: 35,
-                                                  fontWeight: FontWeight.w800,
-                                                ),
-                                              )
-                                            ],
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          8, 6, 6, 6),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Favourite music genre',
+                                            style: FlutterFlowTheme.subtitle1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFFB45A42),
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
-                                        ),
+                                          Text(
+                                            '???',
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF413369),
+                                              fontSize: 35,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          )
+                                        ],
                                       ),
                                     )
                                   ],
@@ -398,30 +399,6 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                     ],
                   ),
                 ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, -1),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
-                    child: Text(
-                      'Hints',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.title1.override(
-                        fontFamily: 'Oswald',
-                        color: Color(0xFF413369),
-                        fontSize: 30,
-                        fontWeight: FontWeight.w800,
-                        fontStyle: FontStyle.italic,
-                      ),
-                    ),
-                  )
-                ],
               ),
             )
           ],
