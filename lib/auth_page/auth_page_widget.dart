@@ -98,10 +98,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                 height: 60,
                                 fit: BoxFit.cover,
                               ),
-                            )
+                            ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -119,14 +119,14 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                               'Roboto',
                               fontSize: 16,
                             ),
-                            indicatorColor: Colors.white,
+                            indicatorColor: FlutterFlowTheme.tertiaryColor,
                             tabs: [
                               Tab(
                                 text: 'Sign In',
                               ),
                               Tab(
                                 text: 'Sign up',
-                              )
+                              ),
                             ],
                           ),
                           Expanded(
@@ -148,16 +148,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                                 emailAddressLoginController,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Email Address',
-                                              labelStyle: FlutterFlowTheme
-                                                  .bodyText1
-                                                  .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF95A1AC),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                              hintText: 'Enter your email...',
+                                              hintText: 'Email Address',
                                               hintStyle: FlutterFlowTheme
                                                   .bodyText1
                                                   .override(
@@ -195,6 +186,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                               fontSize: 14,
                                               fontWeight: FontWeight.normal,
                                             ),
+                                            keyboardType:
+                                                TextInputType.emailAddress,
                                             validator: (val) {
                                               if (val.isEmpty) {
                                                 return 'Please insert your email';
@@ -215,17 +208,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                             obscureText:
                                                 !passwordLoginVisibility,
                                             decoration: InputDecoration(
-                                              labelText: 'Password',
-                                              labelStyle: FlutterFlowTheme
-                                                  .bodyText1
-                                                  .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF95A1AC),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                              hintText:
-                                                  'Enter your password...',
+                                              hintText: 'Password',
                                               hintStyle: FlutterFlowTheme
                                                   .bodyText1
                                                   .override(
@@ -404,7 +387,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                                         FontWeight.normal,
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -457,14 +440,14 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                                           color: Colors.white,
                                                           size: 24,
                                                         ),
-                                                      )
+                                                      ),
                                                     ],
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
-                                        )
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -484,16 +467,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                             controller: nameController,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Name',
-                                              labelStyle: FlutterFlowTheme
-                                                  .bodyText1
-                                                  .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF95A1AC),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                              hintText: 'Enter your  name...',
+                                              hintText: 'Name',
                                               hintStyle: FlutterFlowTheme
                                                   .bodyText1
                                                   .override(
@@ -550,16 +524,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                             controller: surnameController,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Surname',
-                                              labelStyle: FlutterFlowTheme
-                                                  .bodyText1
-                                                  .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF95A1AC),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                              hintText: 'Enter your surname...',
+                                              hintText: 'Surname',
                                               hintStyle: FlutterFlowTheme
                                                   .bodyText1
                                                   .override(
@@ -614,16 +579,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                             controller: emailAddressController,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Email Address',
-                                              labelStyle: FlutterFlowTheme
-                                                  .bodyText1
-                                                  .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF95A1AC),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                              hintText: 'Enter your email...',
+                                              hintText: 'email',
                                               hintStyle: FlutterFlowTheme
                                                   .bodyText1
                                                   .override(
@@ -680,16 +636,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                             controller: phoneNumberController,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Phone Number',
-                                              labelStyle: FlutterFlowTheme
-                                                  .bodyText1
-                                                  .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF95A1AC),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                              hintText: 'Enter your number...',
+                                              hintText: 'Phone number',
                                               hintStyle: FlutterFlowTheme
                                                   .bodyText1
                                                   .override(
@@ -744,17 +691,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                             controller: passwordController,
                                             obscureText: !passwordVisibility,
                                             decoration: InputDecoration(
-                                              labelText: 'New Password',
-                                              labelStyle: FlutterFlowTheme
-                                                  .bodyText1
-                                                  .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF95A1AC),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                              hintText:
-                                                  'Enter your password...',
+                                              hintText: 'New Password',
                                               hintStyle: FlutterFlowTheme
                                                   .bodyText1
                                                   .override(
@@ -828,17 +765,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                             obscureText:
                                                 !passwordConfirmVisibility,
                                             decoration: InputDecoration(
-                                              labelText: 'Confirm Password',
-                                              labelStyle: FlutterFlowTheme
-                                                  .bodyText1
-                                                  .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF95A1AC),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                              hintText:
-                                                  'Enter your password...',
+                                              hintText: 'Confirm Password',
                                               hintStyle: FlutterFlowTheme
                                                   .bodyText1
                                                   .override(
@@ -965,11 +892,11 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                                               borderRadius: 8,
                                             ),
                                           ),
-                                        )
+                                        ),
                                       ],
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -977,7 +904,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

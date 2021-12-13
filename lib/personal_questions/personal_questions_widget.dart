@@ -63,10 +63,10 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                             width: 240,
                             height: 60,
                             fit: BoxFit.cover,
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -88,7 +88,7 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -138,7 +138,7 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                             minimum: 18,
                             maximum: 100,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Padding(
@@ -154,7 +154,7 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -204,7 +204,7 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                             minimum: 0,
                             maximum: 250,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Padding(
@@ -220,7 +220,7 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -250,7 +250,7 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                               horizontalAlignment: WrapAlignment.start,
                               verticalAlignment: WrapCrossAlignment.start,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -265,7 +265,7 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Padding(
@@ -299,10 +299,10 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                               horizontalAlignment: WrapAlignment.start,
                               verticalAlignment: WrapCrossAlignment.start,
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -352,10 +352,10 @@ class _PersonalQuestionsWidgetState extends State<PersonalQuestionsWidget> {
                           borderRadius: 8,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

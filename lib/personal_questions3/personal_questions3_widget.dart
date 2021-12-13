@@ -2,7 +2,7 @@ import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
+import '../profile_landing_page/profile_landing_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -69,10 +69,10 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                             width: 240,
                             height: 60,
                             fit: BoxFit.cover,
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -92,7 +92,7 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Padding(
@@ -124,7 +124,7 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                             margin:
                                 EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                             hidesUnderline: true,
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -141,7 +141,7 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -182,7 +182,7 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                                 color: Color(0xFF403667),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -192,14 +192,14 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'What are some random fun facts about you?',
+                            'What is your favourite place?',
                             style: FlutterFlowTheme.bodyText2.override(
                               fontFamily: 'Poppins',
                               color: Color(0xFF424242),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -240,7 +240,7 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                                 color: Color(0xFF403667),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -258,7 +258,7 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                               fontWeight: FontWeight.normal,
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Row(
@@ -269,7 +269,7 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                             controller: textController3,
                             obscureText: false,
                             decoration: InputDecoration(
-                              hintText: '[My butt...]',
+                              hintText: '[My paintings...]',
                               hintStyle: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
                                 color: Color(0xFF403667),
@@ -296,9 +296,9 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                               color: Color(0xFF403667),
                             ),
                           ),
-                        )
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -324,9 +324,11 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                         onPressed: () async {
                           await Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  NavBarPage(initialPage: 'HomePage_Full'),
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: Duration(milliseconds: 300),
+                              reverseDuration: Duration(milliseconds: 300),
+                              child: ProfileLandingPageWidget(),
                             ),
                           );
                         },
@@ -349,10 +351,10 @@ class _PersonalQuestions3WidgetState extends State<PersonalQuestions3Widget> {
                           borderRadius: 8,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

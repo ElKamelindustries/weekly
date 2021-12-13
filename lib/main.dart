@@ -89,7 +89,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'HomePage_Full';
+  String _currentPage = 'HomePage_First';
 
   @override
   void initState() {
@@ -167,10 +167,10 @@ class _NavBarPageState extends State<NavBarPage> {
             tooltip: '',
           )
         ],
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFFEA9A8B),
         currentIndex: tabs.keys.toList().indexOf(_currentPage),
-        selectedItemColor: Color(0xFFFB0B85),
-        unselectedItemColor: Color(0x8A000000),
+        selectedItemColor: FlutterFlowTheme.secondaryColor,
+        unselectedItemColor: Color(0xFF2E2E2F),
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
         showSelectedLabels: false,
         showUnselectedLabels: false,

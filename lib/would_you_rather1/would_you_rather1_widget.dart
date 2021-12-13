@@ -139,7 +139,7 @@ class _WouldYouRather1WidgetState extends State<WouldYouRather1Widget> {
                         fontSize: 36,
                         fontWeight: FontWeight.w600,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -183,7 +183,7 @@ class _WouldYouRather1WidgetState extends State<WouldYouRather1Widget> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

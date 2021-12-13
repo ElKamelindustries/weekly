@@ -134,7 +134,7 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                           fontWeight: FontWeight.w800,
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -178,7 +178,7 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -222,10 +222,10 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           Align(
@@ -307,7 +307,7 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                       fontWeight: FontWeight.w800,
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -347,7 +347,7 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                       ),
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -387,10 +387,10 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                       ),
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
                       Align(
@@ -469,7 +469,7 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                       fontWeight: FontWeight.w800,
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -509,7 +509,7 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                       ),
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -549,10 +549,10 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                       ),
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
                       Align(
@@ -587,7 +587,7 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
           Spacer10Widget(),
@@ -656,7 +656,7 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -715,16 +715,16 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
-                    )
+                    ),
                   ],
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

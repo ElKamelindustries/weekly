@@ -38,7 +38,7 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                     child: Image.network(
                       'https://picsum.photos/seed/756/600',
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -62,7 +62,7 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                         fontStyle: FontStyle.italic,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -127,12 +127,12 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                                           fontSize: 35,
                                           fontWeight: FontWeight.w800,
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -193,14 +193,14 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                                               fontSize: 35,
                                               fontWeight: FontWeight.w800,
                                             ),
-                                          )
+                                          ),
                                         ],
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -257,12 +257,12 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                                           fontSize: 35,
                                           fontWeight: FontWeight.w800,
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -323,14 +323,14 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                                               fontSize: 35,
                                               fontWeight: FontWeight.w800,
                                             ),
-                                          )
+                                          ),
                                         ],
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -387,20 +387,20 @@ class _MatchProfileWidgetState extends State<MatchProfileWidget> {
                                           fontSize: 35,
                                           fontWeight: FontWeight.w800,
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

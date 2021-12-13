@@ -64,7 +64,7 @@ class _ForgotPasswordVerifyCodeWidgetState
                         height: 60,
                         fit: BoxFit.cover,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -123,7 +123,7 @@ class _ForgotPasswordVerifyCodeWidgetState
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -178,7 +178,7 @@ class _ForgotPasswordVerifyCodeWidgetState
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -210,7 +210,7 @@ class _ForgotPasswordVerifyCodeWidgetState
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      NavBarPage(initialPage: 'HomePage_Full'),
+                                      NavBarPage(initialPage: 'HomePage_First'),
                                 ),
                                 (r) => false,
                               );
@@ -233,13 +233,13 @@ class _ForgotPasswordVerifyCodeWidgetState
                               ),
                               borderRadius: 8,
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

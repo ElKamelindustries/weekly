@@ -152,7 +152,7 @@ class _WouldYouRather2WidgetState extends State<WouldYouRather2Widget> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -103,7 +103,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                     width: 50,
                     height: 50,
                     child: SpinKitPumpingHeart(
-                      color: Color(0xFFFB0B85),
+                      color: FlutterFlowTheme.secondaryColor,
                       size: 50,
                     ),
                   ),

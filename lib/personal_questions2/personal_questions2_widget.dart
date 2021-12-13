@@ -60,10 +60,10 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                             width: 240,
                             height: 60,
                             fit: BoxFit.cover,
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -83,7 +83,7 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Padding(
@@ -108,14 +108,14 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                               color: Color(0xFF403667),
                             ),
                             fillColor: Colors.white,
-                            elevation: 2,
+                            elevation: 0,
                             borderColor: Colors.transparent,
                             borderWidth: 50,
                             borderRadius: 50,
                             margin:
                                 EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                             hidesUnderline: true,
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -132,7 +132,7 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -167,10 +167,10 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                                   margin: EdgeInsetsDirectional.fromSTEB(
                                       12, 4, 12, 4),
                                   hidesUnderline: true,
-                                )
+                                ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -187,7 +187,7 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -215,7 +215,7 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                             margin:
                                 EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                             hidesUnderline: true,
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -233,7 +233,7 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                               fontWeight: FontWeight.normal,
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Row(
@@ -246,19 +246,19 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                             child: Slider(
                               activeColor: Color(0xFF403667),
                               inactiveColor: Color(0xFFDBE2E7),
-                              min: 25,
-                              max: 250,
-                              value: sliderValue ??= 125,
+                              min: 0,
+                              max: 10,
+                              value: sliderValue ??= 0,
                               label: sliderValue.toString(),
-                              divisions: 23,
+                              divisions: 10,
                               onChanged: (newValue) {
                                 setState(() => sliderValue = newValue);
                               },
                             ),
                           ),
-                        )
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -308,10 +308,10 @@ class _PersonalQuestions2WidgetState extends State<PersonalQuestions2Widget> {
                           borderRadius: 8,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

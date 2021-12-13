@@ -38,7 +38,7 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                   width: 240,
                   height: 60,
                   fit: BoxFit.cover,
-                )
+                ),
               ],
             ),
           ),
@@ -92,7 +92,7 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -114,10 +114,10 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                                             fontWeight: FontWeight.normal,
                                           ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -142,7 +142,7 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                                         height: 300,
                                         fit: BoxFit.fitWidth,
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                                 Padding(
@@ -163,7 +163,7 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -185,10 +185,10 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                                             fontWeight: FontWeight.normal,
                                           ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -213,7 +213,7 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                                         height: 250,
                                         fit: BoxFit.fitWidth,
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                                 Padding(
@@ -234,7 +234,7 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -256,13 +256,13 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                                             fontWeight: FontWeight.normal,
                                           ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
                       Align(
@@ -297,7 +297,7 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
           Padding(
@@ -337,10 +337,10 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                       borderRadius: 8,
                     ),
                   ),
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

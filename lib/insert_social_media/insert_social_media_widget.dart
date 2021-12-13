@@ -1,21 +1,20 @@
-import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../forgot_password_verify_code/forgot_password_verify_code_widget.dart';
+import '../personal_questions/personal_questions_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ForgotPasswordPhoneWidget extends StatefulWidget {
-  const ForgotPasswordPhoneWidget({Key key}) : super(key: key);
+class InsertSocialMediaWidget extends StatefulWidget {
+  const InsertSocialMediaWidget({Key key}) : super(key: key);
 
   @override
-  _ForgotPasswordPhoneWidgetState createState() =>
-      _ForgotPasswordPhoneWidgetState();
+  _InsertSocialMediaWidgetState createState() =>
+      _InsertSocialMediaWidgetState();
 }
 
-class _ForgotPasswordPhoneWidgetState extends State<ForgotPasswordPhoneWidget> {
+class _InsertSocialMediaWidgetState extends State<InsertSocialMediaWidget> {
   TextEditingController phoneNumberController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -111,7 +110,7 @@ class _ForgotPasswordPhoneWidgetState extends State<ForgotPasswordPhoneWidget> {
                           ),
                           Expanded(
                             child: Text(
-                              'Phone Sign In',
+                              'Insert social media',
                               style: FlutterFlowTheme.title1.override(
                                 fontFamily: 'Lexend Deca',
                                 color: Color(0xFF403667),
@@ -134,15 +133,8 @@ class _ForgotPasswordPhoneWidgetState extends State<ForgotPasswordPhoneWidget> {
                               controller: phoneNumberController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Your Phone Number...',
+                                labelText: 'Your account name..',
                                 labelStyle: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF95A1AC),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                                hintText: '+1 (204) 204-2056',
-                                hintStyle: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'Lexend Deca',
                                   color: Color(0xFF95A1AC),
                                   fontSize: 14,
@@ -186,29 +178,12 @@ class _ForgotPasswordPhoneWidgetState extends State<ForgotPasswordPhoneWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
-                              if (phoneNumberController.text.isEmpty ||
-                                  !phoneNumberController.text.startsWith('+')) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                        'Phone Number is required and has to start with +.'),
-                                  ),
-                                );
-                                return;
-                              }
-                              await beginPhoneAuth(
-                                context: context,
-                                phoneNumber: phoneNumberController.text,
-                                onCodeSent: () async {
-                                  await Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          ForgotPasswordVerifyCodeWidget(),
-                                    ),
-                                    (r) => false,
-                                  );
-                                },
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      PersonalQuestionsWidget(),
+                                ),
                               );
                             },
                             text: 'Send Code',

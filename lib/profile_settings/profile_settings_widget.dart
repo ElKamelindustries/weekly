@@ -68,7 +68,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                     size: 24,
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -85,7 +85,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -102,16 +102,16 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                 ),
-                              )
+                              ),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),
@@ -163,10 +163,10 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                       ),
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
                       Row(
@@ -184,7 +184,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                       Row(
@@ -202,12 +202,12 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
             Row(
@@ -224,7 +224,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                )
+                ),
               ],
             ),
             ListView(
@@ -280,10 +280,10 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                 size: 18,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
                 Row(
@@ -334,10 +334,10 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                 size: 18,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
                 Row(
@@ -388,10 +388,10 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                 size: 18,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
                 Row(
@@ -442,12 +442,12 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                 size: 18,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
-                )
+                ),
               ],
             ),
             Padding(
@@ -478,10 +478,10 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       ),
                       borderRadius: 8,
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

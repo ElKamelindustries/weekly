@@ -64,7 +64,7 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold,
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -85,10 +85,10 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -133,7 +133,7 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
                                     ),
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -249,12 +249,12 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -333,14 +333,14 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
                               },
                             ),
                           ),
-                        )
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

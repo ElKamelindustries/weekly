@@ -2,7 +2,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../personal_questions/personal_questions_widget.dart';
+import '../insert_social_media/insert_social_media_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -65,10 +65,10 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                               height: 60,
                               fit: BoxFit.cover,
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -91,7 +91,7 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -115,8 +115,13 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                       color: Color(0xFF403667),
                       size: 50,
                     ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => InsertSocialMediaWidget(),
+                        ),
+                      );
                     },
                   ),
                   Divider(
@@ -133,11 +138,16 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                       color: Color(0xFF403667),
                       size: 50,
                     ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => InsertSocialMediaWidget(),
+                        ),
+                      );
                     },
                   ),
-                  Divider()
+                  Divider(),
                 ],
               ),
               FlutterFlowIconButton(
@@ -150,8 +160,13 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                   color: Color(0xFF403667),
                   size: 50,
                 ),
-                onPressed: () {
-                  print('IconButton pressed ...');
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => InsertSocialMediaWidget(),
+                    ),
+                  );
                 },
               ),
               Divider(
@@ -167,8 +182,13 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                   color: Color(0xFF403667),
                   size: 50,
                 ),
-                onPressed: () {
-                  print('IconButton pressed ...');
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => InsertSocialMediaWidget(),
+                    ),
+                  );
                 },
               ),
               Padding(
@@ -184,7 +204,7 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                           await Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => PersonalQuestionsWidget(),
+                              builder: (context) => InsertSocialMediaWidget(),
                             ),
                           );
                         },
@@ -207,10 +227,10 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
                           borderRadius: 8,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

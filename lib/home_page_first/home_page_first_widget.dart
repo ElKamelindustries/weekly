@@ -29,11 +29,32 @@ class _HomePageFirstWidgetState extends State<HomePageFirstWidget>
       trigger: AnimationTrigger.onActionTrigger,
       duration: 1970,
     ),
+    'containerOnPageLoadAnimation1': AnimationInfo(
+      curve: Curves.easeIn,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 800,
+      delay: 50,
+      fadeIn: true,
+      slideOffset: Offset(45, 0),
+    ),
+    'containerOnPageLoadAnimation2': AnimationInfo(
+      curve: Curves.easeIn,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 800,
+      delay: 100,
+      fadeIn: true,
+      slideOffset: Offset(45, 0),
+    ),
   };
 
   @override
   void initState() {
     super.initState();
+    startPageLoadAnimations(
+      animationsMap.values
+          .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
+      this,
+    );
     setupTriggerAnimations(
       animationsMap.values
           .where((anim) => anim.trigger == AnimationTrigger.onActionTrigger),
@@ -45,283 +66,270 @@ class _HomePageFirstWidgetState extends State<HomePageFirstWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFF4D6CC),
+      backgroundColor: FlutterFlowTheme.background,
       body: SafeArea(
-        child: Stack(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(25, 16, 25, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'Timeline',
-                        style: FlutterFlowTheme.title1.override(
-                          fontFamily: 'Source Sans Pro',
-                          fontWeight: FontWeight.w800,
-                        ),
-                      )
-                    ],
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(25, 16, 25, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'Timeline',
+                    style: FlutterFlowTheme.title1.override(
+                      fontFamily: 'Source Sans Pro',
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: Container(
-                        width: 10,
-                        height: 665,
-                        child: Stack(
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(10, 0, 10, 5),
-                              child: PageView(
-                                controller: activitiesController ??=
-                                    PageController(initialPage: 0),
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  Container(
-                                    width: 100,
-                                    height: 300,
-                                    child: Stack(
-                                      children: [
-                                        InkWell(
-                                          onTap: () async {
-                                            await Navigator.push(
-                                              context,
-                                              PageTransition(
-                                                type: PageTransitionType
-                                                    .bottomToTop,
-                                                duration:
-                                                    Duration(milliseconds: 300),
-                                                reverseDuration:
-                                                    Duration(milliseconds: 300),
-                                                child: WouldYouRather1Widget(),
-                                              ),
-                                            );
-                                          },
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(30),
-                                            child: Image.network(
-                                              'https://freevector-images.s3.amazonaws.com/uploads/vector/preview/40539/vecteezy_background-abstract-shapes_fj0221_generated.jpg',
-                                              width: MediaQuery.of(context)
+                ],
+              ),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: Container(
+                    width: 10,
+                    height: 665,
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 5),
+                          child: PageView(
+                            controller: activitiesController ??=
+                                PageController(initialPage: 0),
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              Container(
+                                width: 100,
+                                height: 300,
+                                child: Stack(
+                                  children: [
+                                    InkWell(
+                                      onTap: () async {
+                                        await Navigator.push(
+                                          context,
+                                          PageTransition(
+                                            type:
+                                                PageTransitionType.bottomToTop,
+                                            duration:
+                                                Duration(milliseconds: 300),
+                                            reverseDuration:
+                                                Duration(milliseconds: 300),
+                                            child: WouldYouRather1Widget(),
+                                          ),
+                                        );
+                                      },
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(30),
+                                        child: Image.network(
+                                          'https://freevector-images.s3.amazonaws.com/uploads/vector/preview/40539/vecteezy_background-abstract-shapes_fj0221_generated.jpg',
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          height: MediaQuery.of(context)
                                                   .size
-                                                  .width,
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  0.3,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                        ).animated([
-                                          animationsMap[
-                                              'imageOnActionTriggerAnimation']
-                                        ]),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(0, -0.68),
-                                          child: Text(
-                                            'Would You Rather..',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
-                                              fontSize: 32,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
+                                                  .height *
+                                              0.3,
+                                          fit: BoxFit.cover,
                                         ),
-                                        Align(
-                                          alignment: AlignmentDirectional(0, 0),
-                                          child: Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            height: 100,
-                                            decoration: BoxDecoration(
-                                              color: Color(0x9AF578B4),
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 10, 15, 10),
-                                              child: Text(
-                                                'It\'s time to interact !',
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Color(0x8A000000),
-                                                  fontSize: 28,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
+                                      ),
+                                    ).animated([
+                                      animationsMap[
+                                          'imageOnActionTriggerAnimation']
+                                    ]),
+                                    Align(
+                                      alignment: AlignmentDirectional(0, -0.68),
+                                      child: Text(
+                                        'Would You Rather..',
+                                        textAlign: TextAlign.center,
+                                        style:
+                                            FlutterFlowTheme.bodyText1.override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.tertiaryColor,
+                                          fontSize: 32,
+                                          fontWeight: FontWeight.bold,
                                         ),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(0, 0.4),
-                                          child: Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            height: 100,
-                                            decoration: BoxDecoration(
-                                              color: Color(0x9AF578B4),
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 10, 15, 10),
-                                              child: Text(
-                                                'Your first activity is here !',
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Color(0x8A000000),
-                                                  fontSize: 28,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      ],
+                                      ),
                                     ),
-                                  ),
-                                  Container(
-                                    width: 100,
-                                    height: 300,
-                                    child: Stack(
-                                      children: [
-                                        ClipRRect(
+                                    Align(
+                                      alignment: AlignmentDirectional(0, 0),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        height: 100,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFEA9A8B),
                                           borderRadius:
                                               BorderRadius.circular(30),
-                                          child: Image.network(
-                                            'https://freevector-images.s3.amazonaws.com/uploads/vector/preview/40539/vecteezy_background-abstract-shapes_fj0221_generated.jpg',
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.3,
-                                            fit: BoxFit.cover,
-                                          ),
                                         ),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(0, -0.68),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  15, 10, 15, 10),
                                           child: Text(
-                                            'Coming Soon!',
+                                            'It\'s time to interact !',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.bodyText1
                                                 .override(
                                               fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
-                                              fontSize: 32,
-                                              fontWeight: FontWeight.bold,
+                                              color: Color(0x8A000000),
+                                              fontSize: 28,
+                                              fontWeight: FontWeight.w600,
                                             ),
                                           ),
                                         ),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(0, -0.23),
-                                          child: Text(
-                                            'What is going to happen next ? ',
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.title3,
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: AlignmentDirectional(0, 0),
-                                          child: Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            height: 100,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFF947BD3),
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 10, 15, 10),
-                                              child: Text(
-                                                'A new activity awaits you tomorrow.\nIt\'s surely going to be exciting!',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: Color(0x8A000000),
-                                                  fontSize: 16,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      ],
+                                      ).animated([
+                                        animationsMap[
+                                            'containerOnPageLoadAnimation1']
+                                      ]),
                                     ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0, 0.9),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                                child: SmoothPageIndicator(
-                                  controller: activitiesController ??=
-                                      PageController(initialPage: 0),
-                                  count: 2,
-                                  axisDirection: Axis.horizontal,
-                                  onDotClicked: (i) {
-                                    activitiesController.animateToPage(
-                                      i,
-                                      duration: Duration(milliseconds: 500),
-                                      curve: Curves.ease,
-                                    );
-                                  },
-                                  effect: ExpandingDotsEffect(
-                                    expansionFactor: 2,
-                                    spacing: 30,
-                                    radius: 40,
-                                    dotWidth: 20,
-                                    dotHeight: 18,
-                                    dotColor: Color(0xFF95A1AC),
-                                    activeDotColor: Color(0xFFFB0B85),
-                                    paintStyle: PaintingStyle.fill,
-                                  ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0, 0.4),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        height: 100,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFEA9A8B),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  15, 10, 15, 10),
+                                          child: Text(
+                                            'Your first activity is here !',
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0x8A000000),
+                                              fontSize: 28,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ),
+                                      ).animated([
+                                        animationsMap[
+                                            'containerOnPageLoadAnimation2']
+                                      ]),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ),
-                          ],
+                              Container(
+                                width: 100,
+                                height: 300,
+                                child: Stack(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(30),
+                                      child: Image.network(
+                                        'https://freevector-images.s3.amazonaws.com/uploads/vector/preview/40539/vecteezy_background-abstract-shapes_fj0221_generated.jpg',
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.3,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0, -0.68),
+                                      child: Text(
+                                        'Coming Soon!',
+                                        textAlign: TextAlign.center,
+                                        style:
+                                            FlutterFlowTheme.bodyText1.override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.tertiaryColor,
+                                          fontSize: 32,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0, -0.23),
+                                      child: Text(
+                                        'What is going to happen next ? ',
+                                        textAlign: TextAlign.start,
+                                        style: FlutterFlowTheme.title3,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0, 0),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        height: 100,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFEA9A8B),
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  15, 10, 15, 10),
+                                          child: Text(
+                                            'A new activity awaits you tomorrow.\nIt\'s surely going to be exciting!',
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0x8A000000),
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ).animated(
-                          [animationsMap['pageViewOnActionTriggerAnimation']]),
-                    )
-                  ],
-                )
+                        Align(
+                          alignment: AlignmentDirectional(0, 0.9),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                            child: SmoothPageIndicator(
+                              controller: activitiesController ??=
+                                  PageController(initialPage: 0),
+                              count: 2,
+                              axisDirection: Axis.horizontal,
+                              onDotClicked: (i) {
+                                activitiesController.animateToPage(
+                                  i,
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.ease,
+                                );
+                              },
+                              effect: ExpandingDotsEffect(
+                                expansionFactor: 2,
+                                spacing: 30,
+                                radius: 40,
+                                dotWidth: 20,
+                                dotHeight: 18,
+                                dotColor: Color(0xFF95A1AC),
+                                activeDotColor: FlutterFlowTheme.secondaryColor,
+                                paintStyle: PaintingStyle.fill,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ).animated(
+                      [animationsMap['pageViewOnActionTriggerAnimation']]),
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

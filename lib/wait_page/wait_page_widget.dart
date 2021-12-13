@@ -62,7 +62,7 @@ class _WaitPageWidgetState extends State<WaitPageWidget> {
                   height: 100,
                   fit: BoxFit.cover,
                 ),
-              )
+              ),
             ],
           ),
         ),

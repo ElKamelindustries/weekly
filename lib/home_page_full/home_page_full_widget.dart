@@ -43,7 +43,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: FlutterFlowTheme.background,
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -60,7 +60,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                       fontFamily: 'Source Sans Pro',
                       fontWeight: FontWeight.w800,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -119,7 +119,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                         height:
                                             MediaQuery.of(context).size.height *
                                                 0.4,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.background,
                                         child: ExpandablePanel(
                                           header: Text(
                                             'What happened so far',
@@ -132,7 +132,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                                 .width,
                                             height: 100,
                                             decoration: BoxDecoration(
-                                              color: Color(0x9AF578B4),
+                                              color: FlutterFlowTheme.panel,
                                               borderRadius:
                                                   BorderRadius.circular(30),
                                             ),
@@ -276,7 +276,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                           theme: ExpandableThemeData(
@@ -296,7 +296,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -496,7 +496,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                           theme: ExpandableThemeData(
@@ -516,7 +516,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -716,7 +716,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                           theme: ExpandableThemeData(
@@ -736,7 +736,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -936,7 +936,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                           theme: ExpandableThemeData(
@@ -956,7 +956,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -1156,7 +1156,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                           theme: ExpandableThemeData(
@@ -1176,7 +1176,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -1376,7 +1376,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                           theme: ExpandableThemeData(
@@ -1396,7 +1396,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -1596,7 +1596,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                           theme: ExpandableThemeData(
@@ -1616,10 +1616,10 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -1647,7 +1647,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                 dotWidth: 20,
                                 dotHeight: 18,
                                 dotColor: Color(0xFF95A1AC),
-                                activeDotColor: Color(0xFFFB0B85),
+                                activeDotColor: FlutterFlowTheme.secondaryColor,
                                 paintStyle: PaintingStyle.fill,
                               ),
                             ),
@@ -1657,9 +1657,9 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                     ),
                   ).animated(
                       [animationsMap['pageViewOnActionTriggerAnimation']]),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

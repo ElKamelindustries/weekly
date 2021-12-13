@@ -147,7 +147,7 @@ class _WouldYouRather1SelectedWidgetState
                         fontSize: 36,
                         fontWeight: FontWeight.w600,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -191,7 +191,7 @@ class _WouldYouRather1SelectedWidgetState
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -79,7 +79,7 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                         Row(
@@ -98,12 +98,12 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                                   fontWeight: FontWeight.normal,
                                 ),
                               ),
-                            )
+                            ),
                           ],
-                        )
+                        ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -150,7 +150,7 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   Column(
@@ -190,7 +190,7 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   Column(
@@ -230,7 +230,7 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   Column(
@@ -270,9 +270,9 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -302,7 +302,7 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   Row(
@@ -321,9 +321,9 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -346,7 +346,7 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   Row(
@@ -365,9 +365,9 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -390,7 +390,7 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   Row(
@@ -409,9 +409,9 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -434,7 +434,7 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   Row(
@@ -453,12 +453,12 @@ class _Profile2WidgetState extends State<Profile2Widget> {
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -107,7 +107,7 @@ class _FinalDayWidgetState extends State<FinalDayWidget>
                                           ),
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -169,9 +169,9 @@ class _FinalDayWidgetState extends State<FinalDayWidget>
                                       ),
                                       borderRadius: 8,
                                     ),
-                                  )
+                                  ),
                                 ],
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -209,11 +209,11 @@ class _FinalDayWidgetState extends State<FinalDayWidget>
                           fontSize: 26,
                           fontWeight: FontWeight.w500,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

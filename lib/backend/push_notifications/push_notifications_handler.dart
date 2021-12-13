@@ -13,24 +13,28 @@ import '../../main.dart';
 import '../../auth_page/auth_page_widget.dart';
 import '../../social_media/social_media_widget.dart';
 import '../../personal_questions/personal_questions_widget.dart';
+import '../../personal_questions2/personal_questions2_widget.dart';
+import '../../personal_questions3/personal_questions3_widget.dart';
+import '../../profile_landing_page/profile_landing_page_widget.dart';
+import '../../profile_new/profile_new_widget.dart';
+import '../../tutoriial_page/tutoriial_page_widget.dart';
+import '../../tutoriial_page_copy/tutoriial_page_copy_widget.dart';
+import '../../would_you_rather1/would_you_rather1_widget.dart';
+import '../../would_you_rather1_selected/would_you_rather1_selected_widget.dart';
+import '../../wait_page/wait_page_widget.dart';
+import '../../would_you_rather2/would_you_rather2_widget.dart';
+import '../../would_you_rather2_selected/would_you_rather2_selected_widget.dart';
+import '../../new_hint_page/new_hint_page_widget.dart';
+import '../../match_profile_first_game/match_profile_first_game_widget.dart';
 import '../../match_profile/match_profile_widget.dart';
 import '../../chat/chat_widget.dart';
 import '../../final_day/final_day_widget.dart';
 import '../../social_media_share/social_media_share_widget.dart';
-import '../../game_page/game_page_widget.dart';
-import '../../would_you_rather1/would_you_rather1_widget.dart';
 import '../../never_have_overview/never_have_overview_widget.dart';
 import '../../forgot_password_phone/forgot_password_phone_widget.dart';
 import '../../forgot_password_verify_code/forgot_password_verify_code_widget.dart';
-import '../../personal_questions2/personal_questions2_widget.dart';
-import '../../personal_questions3/personal_questions3_widget.dart';
-import '../../wait_page/wait_page_widget.dart';
-import '../../would_you_rather2/would_you_rather2_widget.dart';
-import '../../new_hint_page/new_hint_page_widget.dart';
-import '../../would_you_rather1_selected/would_you_rather1_selected_widget.dart';
-import '../../would_you_rather2_selected/would_you_rather2_selected_widget.dart';
-import '../../profile_new/profile_new_widget.dart';
 import '../../pictionary/pictionary_widget.dart';
+import '../../insert_social_media/insert_social_media_widget.dart';
 
 class PushNotificationsHandler extends StatefulWidget {
   const PushNotificationsHandler(
@@ -97,14 +101,27 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
 }
 
 final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
-  'HomePage_First': (data) async =>
-      NavBarPage(initialPage: 'HomePageFirstWidget'),
-  'ProfileSettings': (data) async =>
-      NavBarPage(initialPage: 'ProfileSettingsWidget'),
-  'Profile2': (data) async => NavBarPage(initialPage: 'Profile2Widget'),
   'AuthPage': (data) async => AuthPageWidget(),
   'SocialMedia': (data) async => SocialMediaWidget(),
   'PersonalQuestions': (data) async => PersonalQuestionsWidget(),
+  'PersonalQuestions2': (data) async => PersonalQuestions2Widget(),
+  'PersonalQuestions3': (data) async => PersonalQuestions3Widget(),
+  'Profile_Landing_Page': (data) async => ProfileLandingPageWidget(),
+  'Profile_New': (data) async => ProfileNewWidget(),
+  'TutoriialPage': (data) async => TutoriialPageWidget(),
+  'TutoriialPageCopy': (data) async => TutoriialPageCopyWidget(),
+  'WouldYouRather1': (data) async => WouldYouRather1Widget(),
+  'WouldYouRather1Selected': (data) async => WouldYouRather1SelectedWidget(),
+  'WaitPage': (data) async => WaitPageWidget(),
+  'WouldYouRather2': (data) async => WouldYouRather2Widget(),
+  'WouldYouRather2Selected': (data) async => WouldYouRather2SelectedWidget(),
+  'NewHintPage': (data) async => NewHintPageWidget(),
+  'Match_Profile_First_Game': (data) async => MatchProfileFirstGameWidget(),
+  'HomePage_Full': (data) async =>
+      NavBarPage(initialPage: 'HomePageFullWidget'),
+  'ProfileSettings': (data) async =>
+      NavBarPage(initialPage: 'ProfileSettingsWidget'),
+  'Profile2': (data) async => NavBarPage(initialPage: 'Profile2Widget'),
   'MatchProfile': (data) async => MatchProfileWidget(),
   'Chat': (data) async => ChatWidget(
         chatUser: await getDocumentParameter(
@@ -112,21 +129,12 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
       ),
   'FinalDay': (data) async => FinalDayWidget(),
   'SocialMediaShare': (data) async => SocialMediaShareWidget(),
-  'GamePage': (data) async => GamePageWidget(),
-  'WouldYouRather1': (data) async => WouldYouRather1Widget(),
   'NeverHaveOverview': (data) async => NeverHaveOverviewWidget(),
   'ForgotPasswordPhone': (data) async => ForgotPasswordPhoneWidget(),
   'ForgotPasswordVerifyCode': (data) async => ForgotPasswordVerifyCodeWidget(),
-  'PersonalQuestions2': (data) async => PersonalQuestions2Widget(),
-  'PersonalQuestions3': (data) async => PersonalQuestions3Widget(),
   'AudioGame': (data) async => NavBarPage(initialPage: 'AudioGameWidget'),
-  'WaitPage': (data) async => WaitPageWidget(),
-  'WouldYouRather2': (data) async => WouldYouRather2Widget(),
-  'NewHintPage': (data) async => NewHintPageWidget(),
-  'WouldYouRather1Selected': (data) async => WouldYouRather1SelectedWidget(),
-  'WouldYouRather2Selected': (data) async => WouldYouRather2SelectedWidget(),
-  'Profile_New': (data) async => ProfileNewWidget(),
   'Pictionary': (data) async => PictionaryWidget(),
+  'InsertSocialMedia': (data) async => InsertSocialMediaWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

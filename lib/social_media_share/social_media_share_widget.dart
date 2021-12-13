@@ -56,7 +56,7 @@ class _SocialMediaShareWidgetState extends State<SocialMediaShareWidget> {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -135,7 +135,7 @@ class _SocialMediaShareWidgetState extends State<SocialMediaShareWidget> {
                           onPressed: () {
                             print('IconButton pressed ...');
                           },
-                        )
+                        ),
                       ],
                     ),
                     Divider(
@@ -171,14 +171,14 @@ class _SocialMediaShareWidgetState extends State<SocialMediaShareWidget> {
                                 borderRadius: 8,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
