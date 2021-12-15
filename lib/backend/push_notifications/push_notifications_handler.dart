@@ -31,7 +31,13 @@ import '../../o2_result_present/o2_result_present_widget.dart';
 import '../../o2_results_hints/o2_results_hints_widget.dart';
 import '../../match_profile_first_game/match_profile_first_game_widget.dart';
 import '../../to_part_two/to_part_two_widget.dart';
+import '../../pictionary_greeter/pictionary_greeter_widget.dart';
+import '../../pictionary_select/pictionary_select_widget.dart';
+import '../../pictionary1/pictionary1_widget.dart';
+import '../../pictionary2/pictionary2_widget.dart';
+import '../../pictionary_three/pictionary_three_widget.dart';
 import '../../pictionary/pictionary_widget.dart';
+import '../../final_day/final_day_widget.dart';
 import '../../would_you_rather1/would_you_rather1_widget.dart';
 import '../../would_you_rather1_selected/would_you_rather1_selected_widget.dart';
 import '../../wait_page/wait_page_widget.dart';
@@ -39,13 +45,14 @@ import '../../would_you_rather2/would_you_rather2_widget.dart';
 import '../../would_you_rather2_selected/would_you_rather2_selected_widget.dart';
 import '../../new_hint_page/new_hint_page_widget.dart';
 import '../../chat/chat_widget.dart';
-import '../../final_day/final_day_widget.dart';
 import '../../social_media_share/social_media_share_widget.dart';
 import '../../never_have_overview/never_have_overview_widget.dart';
 import '../../forgot_password_phone/forgot_password_phone_widget.dart';
 import '../../forgot_password_verify_code/forgot_password_verify_code_widget.dart';
 import '../../audio_game/audio_game_widget.dart';
 import '../../insert_social_media/insert_social_media_widget.dart';
+import '../../pictionary_copy/pictionary_copy_widget.dart';
+import '../../final_day_copy/final_day_copy_widget.dart';
 
 class PushNotificationsHandler extends StatefulWidget {
   const PushNotificationsHandler(
@@ -136,7 +143,13 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'Profile_Full': (data) async => NavBarPage(initialPage: 'ProfileFullWidget'),
   'Match_Profile_Full': (data) async =>
       NavBarPage(initialPage: 'MatchProfileFullWidget'),
+  'PictionaryGreeter': (data) async => PictionaryGreeterWidget(),
+  'PictionarySelect': (data) async => PictionarySelectWidget(),
+  'Pictionary1': (data) async => Pictionary1Widget(),
+  'Pictionary2': (data) async => Pictionary2Widget(),
+  'PictionaryThree': (data) async => PictionaryThreeWidget(),
   'Pictionary': (data) async => PictionaryWidget(),
+  'FinalDay': (data) async => FinalDayWidget(),
   'WouldYouRather1': (data) async => WouldYouRather1Widget(),
   'WouldYouRather1Selected': (data) async => WouldYouRather1SelectedWidget(),
   'WaitPage': (data) async => WaitPageWidget(),
@@ -147,13 +160,14 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
         chatUser: await getDocumentParameter(
             data, 'chatUser', UsersRecord.serializer),
       ),
-  'FinalDay': (data) async => FinalDayWidget(),
   'SocialMediaShare': (data) async => SocialMediaShareWidget(),
   'NeverHaveOverview': (data) async => NeverHaveOverviewWidget(),
   'ForgotPasswordPhone': (data) async => ForgotPasswordPhoneWidget(),
   'ForgotPasswordVerifyCode': (data) async => ForgotPasswordVerifyCodeWidget(),
   'AudioGame': (data) async => AudioGameWidget(),
   'InsertSocialMedia': (data) async => InsertSocialMediaWidget(),
+  'PictionaryCopy': (data) async => PictionaryCopyWidget(),
+  'FinalDayCopy': (data) async => FinalDayCopyWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

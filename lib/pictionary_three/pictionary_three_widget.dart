@@ -1,18 +1,19 @@
-import '../final_day/final_day_widget.dart';
+import '../components/three_dots_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../pictionary/pictionary_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PictionaryWidget extends StatefulWidget {
-  const PictionaryWidget({Key key}) : super(key: key);
+class PictionaryThreeWidget extends StatefulWidget {
+  const PictionaryThreeWidget({Key key}) : super(key: key);
 
   @override
-  _PictionaryWidgetState createState() => _PictionaryWidgetState();
+  _PictionaryThreeWidgetState createState() => _PictionaryThreeWidgetState();
 }
 
-class _PictionaryWidgetState extends State<PictionaryWidget> {
+class _PictionaryThreeWidgetState extends State<PictionaryThreeWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -25,10 +26,10 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
           await Navigator.push(
             context,
             PageTransition(
-              type: PageTransitionType.rightToLeft,
-              duration: Duration(milliseconds: 300),
-              reverseDuration: Duration(milliseconds: 300),
-              child: FinalDayWidget(),
+              type: PageTransitionType.fade,
+              duration: Duration(milliseconds: 0),
+              reverseDuration: Duration(milliseconds: 0),
+              child: PictionaryWidget(),
             ),
           );
         },
@@ -229,67 +230,10 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
                                 ),
                               ),
                             ),
-                            Align(
-                              alignment: AlignmentDirectional(-0.75, 0),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.7,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.panel,
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        15, 10, 15, 10),
-                                    child: Text(
-                                      valueOrDefault<String>(
-                                        'You have just met your new match, ',
-                                        'Mario and Luigi',
-                                      ),
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0x8A000000),
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.75, 0),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.7,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFF947BD3),
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        15, 10, 15, 10),
-                                    child: Text(
-                                      valueOrDefault<String>(
-                                        'Wrong, try again!',
-                                        'You guessed it!',
-                                      ),
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0x8A000000),
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                              child: ThreeDotsWidget(),
                             ),
                           ],
                         ),

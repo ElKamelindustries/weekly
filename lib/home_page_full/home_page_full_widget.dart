@@ -3,7 +3,7 @@ import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
-import '../pictionary/pictionary_widget.dart';
+import '../pictionary_greeter/pictionary_greeter_widget.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -90,7 +90,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 5),
                           child: PageView(
                             controller: activitiesController ??=
-                                PageController(initialPage: 0),
+                                PageController(initialPage: 6),
                             scrollDirection: Axis.horizontal,
                             children: [
                               Container(
@@ -1296,9 +1296,14 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                       onTap: () async {
                                         await Navigator.push(
                                           context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                PictionaryWidget(),
+                                          PageTransition(
+                                            type:
+                                                PageTransitionType.rightToLeft,
+                                            duration:
+                                                Duration(milliseconds: 300),
+                                            reverseDuration:
+                                                Duration(milliseconds: 300),
+                                            child: PictionaryGreeterWidget(),
                                           ),
                                         );
                                       },
@@ -1430,7 +1435,7 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                 EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                             child: SmoothPageIndicator(
                               controller: activitiesController ??=
-                                  PageController(initialPage: 0),
+                                  PageController(initialPage: 6),
                               count: 7,
                               axisDirection: Axis.horizontal,
                               onDotClicked: (i) {
