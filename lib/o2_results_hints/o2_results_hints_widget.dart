@@ -1,48 +1,39 @@
 import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../match_profile_first_game/match_profile_first_game_widget.dart';
 import '../to_part_two/to_part_two_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MatchProfileFirstGameWidget extends StatefulWidget {
-  const MatchProfileFirstGameWidget({Key key}) : super(key: key);
+class O2ResultsHintsWidget extends StatefulWidget {
+  const O2ResultsHintsWidget({Key key}) : super(key: key);
 
   @override
-  _MatchProfileFirstGameWidgetState createState() =>
-      _MatchProfileFirstGameWidgetState();
+  _O2ResultsHintsWidgetState createState() => _O2ResultsHintsWidgetState();
 }
 
-class _MatchProfileFirstGameWidgetState
-    extends State<MatchProfileFirstGameWidget> with TickerProviderStateMixin {
+class _O2ResultsHintsWidgetState extends State<O2ResultsHintsWidget>
+    with TickerProviderStateMixin {
   final animationsMap = {
     'cardOnPageLoadAnimation1': AnimationInfo(
+      curve: Curves.linear,
       trigger: AnimationTrigger.onPageLoad,
-      duration: 1000,
-      delay: 500,
+      duration: 600,
+      delay: 200,
       fadeIn: true,
-      slideOffset: Offset(75, 0),
+      slideOffset: Offset(50, 0),
+      scale: 0.8,
     ),
     'cardOnPageLoadAnimation2': AnimationInfo(
+      curve: Curves.linear,
       trigger: AnimationTrigger.onPageLoad,
-      duration: 1000,
-      delay: 1000,
+      duration: 600,
+      delay: 220,
       fadeIn: true,
-      slideOffset: Offset(100, 0),
-    ),
-    'cardOnActionTriggerAnimation1': AnimationInfo(
-      curve: Curves.elasticOut,
-      trigger: AnimationTrigger.onActionTrigger,
-      duration: 800,
-      slideOffset: Offset(20, -5),
-    ),
-    'cardOnActionTriggerAnimation2': AnimationInfo(
-      curve: Curves.elasticOut,
-      trigger: AnimationTrigger.onActionTrigger,
-      duration: 800,
-      slideOffset: Offset(20, -5),
+      slideOffset: Offset(50, 0),
+      scale: 0.75,
     ),
   };
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -55,11 +46,6 @@ class _MatchProfileFirstGameWidgetState
           .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
       this,
     );
-    setupTriggerAnimations(
-      animationsMap.values
-          .where((anim) => anim.trigger == AnimationTrigger.onActionTrigger),
-      this,
-    );
   }
 
   @override
@@ -68,91 +54,77 @@ class _MatchProfileFirstGameWidgetState
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.background,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 500,
-                child: Stack(
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 500,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.background,
-                      ),
-                      child: Image.asset(
-                        'assets/images/3349.png',
-                        width: 100,
-                        height: 100,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Align(
-                      alignment: AlignmentDirectional(-1, -1),
-                      child: FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 30,
-                        borderWidth: 1,
-                        buttonSize: 60,
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: FlutterFlowTheme.secondaryColor,
-                          size: 30,
-                        ),
-                        onPressed: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ToPartTwoWidget(),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ],
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Align(
+              alignment: AlignmentDirectional(0.07, -0.96),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                child: Image.asset(
+                  'assets/images/logo_arianna.png',
+                  height: 100,
+                  fit: BoxFit.cover,
                 ),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(-1, 0),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(7.5, 0, 0, 0),
-                      child: Text(
-                        'Alice',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0.01, -0.32),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                child: Text(
+                  'Interesting picks !',
+                  style: FlutterFlowTheme.bodyText1.override(
+                    fontFamily: 'Oswald',
+                    color: Color(0xFF403667),
+                    fontSize: 24,
                   ),
-                  Expanded(
-                    child: Align(
-                      alignment: AlignmentDirectional(0.85, 0),
-                      child: Text(
-                        '23',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 24,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-              Card(
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+              child: Card(
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                color: FlutterFlowTheme.panel,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(15, 10, 15, 10),
+                  child: Text(
+                    'The activity is over, now you\'ll also both discover parts of each other profile',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Poppins',
+                      color: FlutterFlowTheme.textColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0.01, -0.32),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                child: Text(
+                  'Your new hints ',
+                  style: FlutterFlowTheme.bodyText1.override(
+                    fontFamily: 'Oswald',
+                    color: Color(0xFF403667),
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+              child: Card(
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 color: FlutterFlowTheme.background,
-                elevation: 10,
+                elevation: 5,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
@@ -164,7 +136,7 @@ class _MatchProfileFirstGameWidgetState
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(15, 10, 0, 0),
                         child: Text(
-                          'Bio',
+                          'Alice\'s Bio',
                           textAlign: TextAlign.start,
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
@@ -188,9 +160,13 @@ class _MatchProfileFirstGameWidgetState
                   ],
                 ),
               ).animated([animationsMap['cardOnPageLoadAnimation1']]),
-              Card(
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+              child: Card(
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 color: FlutterFlowTheme.background,
+                elevation: 5,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
@@ -307,103 +283,82 @@ class _MatchProfileFirstGameWidgetState
                   ],
                 ),
               ).animated([animationsMap['cardOnPageLoadAnimation2']]),
-              InkWell(
-                onTap: () async {
-                  final animation =
-                      animationsMap['cardOnActionTriggerAnimation1'];
-                  await (animation.curvedAnimation.parent
-                          as AnimationController)
-                      .forward(from: 0.0);
-                },
-                child: Card(
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: FlutterFlowTheme.panel,
-                  elevation: 10,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Align(
-                        alignment: AlignmentDirectional(-1, 0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(15, 10, 0, 0),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(15, 0, 5, 0),
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ToPartTwoWidget(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.45,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.panel,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Align(
+                          alignment: AlignmentDirectional(0, 0),
                           child: Text(
-                            'Interests',
-                            textAlign: TextAlign.start,
+                            'Timeline',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
-                              fontSize: 20,
+                              color: FlutterFlowTheme.textColor,
+                              fontSize: 18,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: AlignmentDirectional(-1, 0),
-                        child: Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(15, 0, 15, 10),
-                          child: Text(
-                            'You still have to discover these !',
-                            textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.bodyText1,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () async {
+                      await Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          duration: Duration(milliseconds: 300),
+                          reverseDuration: Duration(milliseconds: 300),
+                          child: MatchProfileFirstGameWidget(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.45,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.panel,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Align(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: Text(
+                          'Match',
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.textColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
-                ),
-              ).animated([animationsMap['cardOnActionTriggerAnimation1']]),
-              InkWell(
-                onTap: () async {
-                  final animation =
-                      animationsMap['cardOnActionTriggerAnimation2'];
-                  await (animation.curvedAnimation.parent
-                          as AnimationController)
-                      .forward(from: 0.0);
-                },
-                child: Card(
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: FlutterFlowTheme.panel,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Align(
-                        alignment: AlignmentDirectional(-1, 0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(15, 10, 0, 0),
-                          child: Text(
-                            'Things she likes',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(-1, 0),
-                        child: Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(15, 0, 15, 10),
-                          child: Text(
-                            'You still have to discover them ',
-                            style: FlutterFlowTheme.bodyText1,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ).animated([animationsMap['cardOnActionTriggerAnimation2']]),
-            ],
-          ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

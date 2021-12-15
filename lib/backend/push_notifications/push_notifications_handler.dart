@@ -18,22 +18,33 @@ import '../../personal_questions3/personal_questions3_widget.dart';
 import '../../profile_landing_page/profile_landing_page_widget.dart';
 import '../../profile_new/profile_new_widget.dart';
 import '../../tutoriial_page/tutoriial_page_widget.dart';
-import '../../tutoriial_page_copy/tutoriial_page_copy_widget.dart';
+import '../../home_page_first/home_page_first_widget.dart';
+import '../../would_you_rather_question/would_you_rather_question_widget.dart';
+import '../../wait_page_q1/wait_page_q1_widget.dart';
+import '../../would_you_rather_question2/would_you_rather_question2_widget.dart';
+import '../../wait_page_q2/wait_page_q2_widget.dart';
+import '../../q2_result/q2_result_widget.dart';
+import '../../would_you_rather_option/would_you_rather_option_widget.dart';
+import '../../wait_page1_option/wait_page1_option_widget.dart';
+import '../../would_you_rather2_option/would_you_rather2_option_widget.dart';
+import '../../o2_result_present/o2_result_present_widget.dart';
+import '../../o2_results_hints/o2_results_hints_widget.dart';
+import '../../match_profile_first_game/match_profile_first_game_widget.dart';
+import '../../to_part_two/to_part_two_widget.dart';
+import '../../pictionary/pictionary_widget.dart';
 import '../../would_you_rather1/would_you_rather1_widget.dart';
 import '../../would_you_rather1_selected/would_you_rather1_selected_widget.dart';
 import '../../wait_page/wait_page_widget.dart';
 import '../../would_you_rather2/would_you_rather2_widget.dart';
 import '../../would_you_rather2_selected/would_you_rather2_selected_widget.dart';
 import '../../new_hint_page/new_hint_page_widget.dart';
-import '../../match_profile_first_game/match_profile_first_game_widget.dart';
-import '../../match_profile/match_profile_widget.dart';
 import '../../chat/chat_widget.dart';
 import '../../final_day/final_day_widget.dart';
 import '../../social_media_share/social_media_share_widget.dart';
 import '../../never_have_overview/never_have_overview_widget.dart';
 import '../../forgot_password_phone/forgot_password_phone_widget.dart';
 import '../../forgot_password_verify_code/forgot_password_verify_code_widget.dart';
-import '../../pictionary/pictionary_widget.dart';
+import '../../audio_game/audio_game_widget.dart';
 import '../../insert_social_media/insert_social_media_widget.dart';
 
 class PushNotificationsHandler extends StatefulWidget {
@@ -109,20 +120,29 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'Profile_Landing_Page': (data) async => ProfileLandingPageWidget(),
   'Profile_New': (data) async => ProfileNewWidget(),
   'TutoriialPage': (data) async => TutoriialPageWidget(),
-  'TutoriialPageCopy': (data) async => TutoriialPageCopyWidget(),
+  'HomePage_First': (data) async => HomePageFirstWidget(),
+  'WouldYouRatherQuestion': (data) async => WouldYouRatherQuestionWidget(),
+  'WaitPageQ1': (data) async => WaitPageQ1Widget(),
+  'WouldYouRatherQuestion2': (data) async => WouldYouRatherQuestion2Widget(),
+  'WaitPageQ2': (data) async => WaitPageQ2Widget(),
+  'Q2Result': (data) async => Q2ResultWidget(),
+  'WouldYouRatherOption': (data) async => WouldYouRatherOptionWidget(),
+  'WaitPage1Option': (data) async => WaitPage1OptionWidget(),
+  'WouldYouRather2Option': (data) async => WouldYouRather2OptionWidget(),
+  'O2ResultPresent': (data) async => O2ResultPresentWidget(),
+  'O2ResultsHints': (data) async => O2ResultsHintsWidget(),
+  'Match_Profile_First_Game': (data) async => MatchProfileFirstGameWidget(),
+  'ToPartTwo': (data) async => ToPartTwoWidget(),
+  'Profile_Full': (data) async => NavBarPage(initialPage: 'ProfileFullWidget'),
+  'Match_Profile_Full': (data) async =>
+      NavBarPage(initialPage: 'MatchProfileFullWidget'),
+  'Pictionary': (data) async => PictionaryWidget(),
   'WouldYouRather1': (data) async => WouldYouRather1Widget(),
   'WouldYouRather1Selected': (data) async => WouldYouRather1SelectedWidget(),
   'WaitPage': (data) async => WaitPageWidget(),
   'WouldYouRather2': (data) async => WouldYouRather2Widget(),
   'WouldYouRather2Selected': (data) async => WouldYouRather2SelectedWidget(),
   'NewHintPage': (data) async => NewHintPageWidget(),
-  'Match_Profile_First_Game': (data) async => MatchProfileFirstGameWidget(),
-  'HomePage_Full': (data) async =>
-      NavBarPage(initialPage: 'HomePageFullWidget'),
-  'ProfileSettings': (data) async =>
-      NavBarPage(initialPage: 'ProfileSettingsWidget'),
-  'Profile2': (data) async => NavBarPage(initialPage: 'Profile2Widget'),
-  'MatchProfile': (data) async => MatchProfileWidget(),
   'Chat': (data) async => ChatWidget(
         chatUser: await getDocumentParameter(
             data, 'chatUser', UsersRecord.serializer),
@@ -132,8 +152,7 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'NeverHaveOverview': (data) async => NeverHaveOverviewWidget(),
   'ForgotPasswordPhone': (data) async => ForgotPasswordPhoneWidget(),
   'ForgotPasswordVerifyCode': (data) async => ForgotPasswordVerifyCodeWidget(),
-  'AudioGame': (data) async => NavBarPage(initialPage: 'AudioGameWidget'),
-  'Pictionary': (data) async => PictionaryWidget(),
+  'AudioGame': (data) async => AudioGameWidget(),
   'InsertSocialMedia': (data) async => InsertSocialMediaWidget(),
 };
 

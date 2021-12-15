@@ -7,28 +7,24 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_video_player.dart';
 import '../flutter_flow/upload_media.dart';
-import '../tutoriial_page/tutoriial_page_widget.dart';
-import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
-class ProfileNewWidget extends StatefulWidget {
-  const ProfileNewWidget({Key key}) : super(key: key);
+class ProfileFullWidget extends StatefulWidget {
+  const ProfileFullWidget({Key key}) : super(key: key);
 
   @override
-  _ProfileNewWidgetState createState() => _ProfileNewWidgetState();
+  _ProfileFullWidgetState createState() => _ProfileFullWidgetState();
 }
 
-class _ProfileNewWidgetState extends State<ProfileNewWidget> {
+class _ProfileFullWidgetState extends State<ProfileFullWidget> {
   String choiceChipsValue1;
   String choiceChipsValue2;
   String choiceChipsValue3;
   String choiceChipsValue4;
-  String choiceChipsValue5;
-  String choiceChipsValue6;
   String uploadedFileUrl = '';
   TextEditingController textController;
   final formKey = GlobalKey<FormState>();
@@ -37,7 +33,8 @@ class _ProfileNewWidgetState extends State<ProfileNewWidget> {
   @override
   void initState() {
     super.initState();
-    textController = TextEditingController();
+    textController =
+        TextEditingController(text: 'A head full of stars and thoughts ');
   }
 
   @override
@@ -156,29 +153,6 @@ class _ProfileNewWidgetState extends State<ProfileNewWidget> {
                                   },
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(1, -1),
-                                child: FlutterFlowIconButton(
-                                  borderColor: Colors.transparent,
-                                  borderRadius: 30,
-                                  borderWidth: 1,
-                                  buttonSize: 60,
-                                  icon: Icon(
-                                    Icons.arrow_forward,
-                                    color: FlutterFlowTheme.secondaryColor,
-                                    size: 30,
-                                  ),
-                                  onPressed: () async {
-                                    await Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            TutoriialPageWidget(),
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ),
                             ],
                           ),
                         ),
@@ -286,126 +260,34 @@ class _ProfileNewWidgetState extends State<ProfileNewWidget> {
                         ),
                         Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
-                          color: FlutterFlowTheme.panel,
+                          color: FlutterFlowTheme.background,
                           elevation: 10,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          child: Container(
-                            height: MediaQuery.of(context).size.height * 0.22,
-                            constraints: BoxConstraints(
-                              maxHeight: double.infinity,
-                            ),
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.panel,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Container(
-                              width: double.infinity,
-                              height: double.infinity,
-                              color: FlutterFlowTheme.background,
-                              child: ExpandablePanel(
-                                header: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 10, 0, 0),
-                                  child: Text(
-                                    'Interests',
-                                    style: FlutterFlowTheme.title1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                      fontSize: 20,
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(-1, 0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        15, 10, 0, 10),
+                                    child: Text(
+                                      'Interests',
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.title1.override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                      ),
                                     ),
                                   ),
                                 ),
-                                collapsed: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            15, 0, 18, 0),
-                                        child: FlutterFlowChoiceChips(
-                                          initialOption: choiceChipsValue1 ??=
-                                              'Programming',
-                                          options: [
-                                            ChipData('Programming', Icons.code)
-                                          ],
-                                          onChanged: (val) => setState(
-                                              () => choiceChipsValue1 = val),
-                                          selectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.panel,
-                                            textStyle: FlutterFlowTheme
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                            ),
-                                            iconColor: Colors.white,
-                                            iconSize: 15,
-                                            elevation: 4,
-                                          ),
-                                          unselectedChipStyle: ChipStyle(
-                                            backgroundColor: Colors.white,
-                                            textStyle: FlutterFlowTheme
-                                                .bodyText2
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF262D34),
-                                            ),
-                                            iconColor: Color(0xFF262D34),
-                                            iconSize: 18,
-                                            elevation: 4,
-                                          ),
-                                          chipSpacing: 1,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 75, 0),
-                                        child: FlutterFlowChoiceChips(
-                                          initialOption: choiceChipsValue2 ??=
-                                              'Cooking',
-                                          options: [
-                                            ChipData('Cooking',
-                                                Icons.local_pizza_sharp)
-                                          ],
-                                          onChanged: (val) => setState(
-                                              () => choiceChipsValue2 = val),
-                                          selectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.panel,
-                                            textStyle: FlutterFlowTheme
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                            ),
-                                            iconColor: Colors.white,
-                                            iconSize: 15,
-                                            elevation: 4,
-                                          ),
-                                          unselectedChipStyle: ChipStyle(
-                                            backgroundColor: Colors.white,
-                                            textStyle: FlutterFlowTheme
-                                                .bodyText2
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF262D34),
-                                            ),
-                                            iconColor: Color(0xFF262D34),
-                                            iconSize: 18,
-                                            elevation: 4,
-                                          ),
-                                          chipSpacing: 20,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                expanded: Padding(
+                                Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15, 0, 15, 0),
                                   child: Column(
@@ -417,14 +299,14 @@ class _ProfileNewWidgetState extends State<ProfileNewWidget> {
                                           Expanded(
                                             child: FlutterFlowChoiceChips(
                                               initialOption:
-                                                  choiceChipsValue3 ??=
+                                                  choiceChipsValue1 ??=
                                                       'Programming',
                                               options: [
                                                 ChipData(
                                                     'Programming', Icons.code)
                                               ],
                                               onChanged: (val) => setState(() =>
-                                                  choiceChipsValue3 = val),
+                                                  choiceChipsValue1 = val),
                                               selectedChipStyle: ChipStyle(
                                                 backgroundColor:
                                                     FlutterFlowTheme.panel,
@@ -456,14 +338,14 @@ class _ProfileNewWidgetState extends State<ProfileNewWidget> {
                                           Expanded(
                                             child: FlutterFlowChoiceChips(
                                               initialOption:
-                                                  choiceChipsValue4 ??=
+                                                  choiceChipsValue2 ??=
                                                       'Cooking',
                                               options: [
                                                 ChipData('Cooking',
                                                     Icons.local_pizza_sharp)
                                               ],
                                               onChanged: (val) => setState(() =>
-                                                  choiceChipsValue4 = val),
+                                                  choiceChipsValue2 = val),
                                               selectedChipStyle: ChipStyle(
                                                 backgroundColor:
                                                     FlutterFlowTheme.panel,
@@ -500,14 +382,14 @@ class _ProfileNewWidgetState extends State<ProfileNewWidget> {
                                           Expanded(
                                             child: FlutterFlowChoiceChips(
                                               initialOption:
-                                                  choiceChipsValue5 ??=
+                                                  choiceChipsValue3 ??=
                                                       'Partying',
                                               options: [
                                                 ChipData(
                                                     'Partying', Icons.whatshot)
                                               ],
                                               onChanged: (val) => setState(() =>
-                                                  choiceChipsValue5 = val),
+                                                  choiceChipsValue3 = val),
                                               selectedChipStyle: ChipStyle(
                                                 backgroundColor:
                                                     FlutterFlowTheme.panel,
@@ -539,14 +421,14 @@ class _ProfileNewWidgetState extends State<ProfileNewWidget> {
                                         ],
                                       ),
                                       FlutterFlowChoiceChips(
-                                        initialOption: choiceChipsValue6 ??=
+                                        initialOption: choiceChipsValue4 ??=
                                             'Astrology',
                                         options: [
                                           ChipData(
                                               'Astrology', Icons.auto_awesome)
                                         ],
                                         onChanged: (val) => setState(
-                                            () => choiceChipsValue6 = val),
+                                            () => choiceChipsValue4 = val),
                                         selectedChipStyle: ChipStyle(
                                           backgroundColor:
                                               FlutterFlowTheme.panel,
@@ -575,17 +457,7 @@ class _ProfileNewWidgetState extends State<ProfileNewWidget> {
                                     ],
                                   ),
                                 ),
-                                theme: ExpandableThemeData(
-                                  tapHeaderToExpand: true,
-                                  tapBodyToExpand: false,
-                                  tapBodyToCollapse: false,
-                                  headerAlignment:
-                                      ExpandablePanelHeaderAlignment.center,
-                                  hasIcon: true,
-                                  expandIcon: Icons.edit_sharp,
-                                  iconSize: 20,
-                                ),
-                              ),
+                              ],
                             ),
                           ),
                         ),

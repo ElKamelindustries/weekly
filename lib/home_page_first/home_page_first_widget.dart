@@ -1,7 +1,10 @@
 import '../flutter_flow/flutter_flow_animations.dart';
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../would_you_rather1/would_you_rather1_widget.dart';
+import '../match_profile_first_game/match_profile_first_game_widget.dart';
+import '../profile_new/profile_new_widget.dart';
+import '../would_you_rather_question/would_you_rather_question_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -93,7 +96,7 @@ class _HomePageFirstWidgetState extends State<HomePageFirstWidget>
                 Expanded(
                   child: Container(
                     width: 10,
-                    height: 665,
+                    height: 650,
                     child: Stack(
                       children: [
                         Padding(
@@ -119,7 +122,8 @@ class _HomePageFirstWidgetState extends State<HomePageFirstWidget>
                                                 Duration(milliseconds: 300),
                                             reverseDuration:
                                                 Duration(milliseconds: 300),
-                                            child: WouldYouRather1Widget(),
+                                            child:
+                                                WouldYouRatherQuestionWidget(),
                                           ),
                                         );
                                       },
@@ -155,68 +159,93 @@ class _HomePageFirstWidgetState extends State<HomePageFirstWidget>
                                       ),
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        height: 100,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFFEA9A8B),
-                                          borderRadius:
-                                              BorderRadius.circular(30),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 10, 15, 10),
-                                          child: Text(
-                                            'It\'s time to interact !',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0x8A000000),
-                                              fontSize: 28,
-                                              fontWeight: FontWeight.w600,
-                                            ),
+                                      alignment:
+                                          AlignmentDirectional(-1, -0.21),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            15, 10, 0, 0),
+                                        child: Text(
+                                          'Today',
+                                          style: FlutterFlowTheme.bodyText1
+                                              .override(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                         ),
-                                      ).animated([
-                                        animationsMap[
-                                            'containerOnPageLoadAnimation1']
-                                      ]),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0, 0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 15, 0, 0),
+                                        child: Container(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          height: 100,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFEA9A8B),
+                                            borderRadius:
+                                                BorderRadius.circular(30),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    15, 10, 15, 10),
+                                            child: Text(
+                                              'Your first activity is  here !  \nIt\'s time to interact.',
+                                              textAlign: TextAlign.center,
+                                              style: FlutterFlowTheme.bodyText1
+                                                  .override(
+                                                fontFamily: 'Poppins',
+                                                color: Color(0x8A000000),
+                                                fontSize: 22,
+                                                fontWeight: FontWeight.w900,
+                                              ),
+                                            ),
+                                          ),
+                                        ).animated([
+                                          animationsMap[
+                                              'containerOnPageLoadAnimation1']
+                                        ]),
+                                      ),
                                     ),
                                     Align(
                                       alignment: AlignmentDirectional(0, 0.4),
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        height: 100,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFFEA9A8B),
-                                          borderRadius:
-                                              BorderRadius.circular(30),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 10, 15, 10),
-                                          child: Text(
-                                            'Your first activity is here !',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0x8A000000),
-                                              fontSize: 28,
-                                              fontWeight: FontWeight.w600,
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 15, 0, 0),
+                                        child: Container(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          height: 100,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFEA9A8B),
+                                            borderRadius:
+                                                BorderRadius.circular(30),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    15, 10, 15, 10),
+                                            child: Text(
+                                              'Choose the questions for your partner and take turns to answer',
+                                              textAlign: TextAlign.center,
+                                              style: FlutterFlowTheme.bodyText1
+                                                  .override(
+                                                fontFamily: 'Poppins',
+                                                color: Color(0x8A000000),
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ).animated([
-                                        animationsMap[
-                                            'containerOnPageLoadAnimation2']
-                                      ]),
+                                        ).animated([
+                                          animationsMap[
+                                              'containerOnPageLoadAnimation2']
+                                        ]),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -297,7 +326,7 @@ class _HomePageFirstWidgetState extends State<HomePageFirstWidget>
                           alignment: AlignmentDirectional(0, 0.9),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                EdgeInsetsDirectional.fromSTEB(0, 400, 0, 0),
                             child: SmoothPageIndicator(
                               controller: activitiesController ??=
                                   PageController(initialPage: 0),
@@ -329,6 +358,90 @@ class _HomePageFirstWidgetState extends State<HomePageFirstWidget>
                       [animationsMap['pageViewOnActionTriggerAnimation']]),
                 ),
               ],
+            ),
+            Align(
+              alignment: AlignmentDirectional(0, -1),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 70,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.panel,
+                  shape: BoxShape.rectangle,
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 30,
+                          borderWidth: 1,
+                          buttonSize: 60,
+                          icon: Icon(
+                            Icons.person_outline_rounded,
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                          onPressed: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProfileNewWidget(),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 30,
+                          borderWidth: 1,
+                          buttonSize: 60,
+                          icon: Icon(
+                            Icons.home_rounded,
+                            color: Color(0xFF413369),
+                            size: 30,
+                          ),
+                          onPressed: () {
+                            print('IconButton pressed ...');
+                          },
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 30,
+                          borderWidth: 1,
+                          buttonSize: 60,
+                          icon: Icon(
+                            Icons.favorite_border_rounded,
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                          onPressed: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    MatchProfileFirstGameWidget(),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),

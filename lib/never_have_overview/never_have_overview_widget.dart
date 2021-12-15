@@ -3,7 +3,6 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
-import '../match_profile/match_profile_widget.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -679,7 +678,8 @@ class _NeverHaveOverviewWidgetState extends State<NeverHaveOverviewWidget> {
                           await Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MatchProfileWidget(),
+                              builder: (context) =>
+                                  NavBarPage(initialPage: 'Match_Profile_Full'),
                             ),
                           );
                         },

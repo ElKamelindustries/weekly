@@ -10,6 +10,7 @@ class FlutterFlowTheme {
   static const Color orange = Color(0xFFB45A42);
   static const Color background = Color(0xFFF4D6CC);
   static const Color panel = Color(0xFFEA9A8B);
+  static const Color textColor = Color(0xFF403667);
 
   String primaryFontFamily = 'Poppins';
   String secondaryFontFamily = 'Roboto';

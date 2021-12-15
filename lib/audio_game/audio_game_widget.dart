@@ -68,10 +68,10 @@ class _AudioGameWidgetState extends State<AudioGameWidget> {
                                   path:
                                       'https://www.youtube.com/watch?v=5FwztKGQmd8K1D_xoixkit-forest-stream-in-the-sunlight-529-large.mp4',
                                   videoType: VideoType.network,
-                                  autoPlay: false,
+                                  autoPlay: true,
                                   looping: true,
-                                  showControls: true,
-                                  allowFullScreen: true,
+                                  showControls: false,
+                                  allowFullScreen: false,
                                   allowPlaybackSpeedMenu: false,
                                 ),
                                 Padding(

@@ -19,7 +19,7 @@ class _TutoriialPageWidgetState extends State<TutoriialPageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.panel,
+      backgroundColor: FlutterFlowTheme.background,
       body: SafeArea(
         child: Align(
           alignment: AlignmentDirectional(0, 0),

@@ -9,11 +9,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:weekly/auth_page/auth_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'home_page_first/home_page_first_widget.dart';
+import 'profile_full/profile_full_widget.dart';
 import 'home_page_full/home_page_full_widget.dart';
-import 'profile_settings/profile_settings_widget.dart';
-import 'profile2/profile2_widget.dart';
-import 'audio_game/audio_game_widget.dart';
+import 'match_profile_full/match_profile_full_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -89,7 +87,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'HomePage_First';
+  String _currentPage = 'HomePage_Full';
 
   @override
   void initState() {
@@ -100,11 +98,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'HomePage_First': HomePageFirstWidget(),
+      'Profile_Full': ProfileFullWidget(),
       'HomePage_Full': HomePageFullWidget(),
-      'ProfileSettings': ProfileSettingsWidget(),
-      'Profile2': Profile2Widget(),
-      'AudioGame': AudioGameWidget(),
+      'Match_Profile_Full': MatchProfileFullWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
@@ -112,48 +108,12 @@ class _NavBarPageState extends State<NavBarPage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.favorite_border,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.favorite,
-              size: 24,
-            ),
-            label: 'Your person',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite_border,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.favorite,
-              size: 24,
-            ),
-            label: 'Your person',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.person_outlined,
-              size: 24,
+              size: 28,
             ),
             activeIcon: Icon(
-              Icons.person,
-              size: 24,
-            ),
-            label: 'Profile',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.home,
-              size: 24,
+              Icons.person_rounded,
+              size: 28,
             ),
             label: 'Home',
             tooltip: '',
@@ -161,7 +121,23 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,
-              size: 24,
+              size: 28,
+            ),
+            activeIcon: Icon(
+              Icons.home_rounded,
+              size: 28,
+            ),
+            label: 'Timeline',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.favorite_border_rounded,
+              size: 28,
+            ),
+            activeIcon: Icon(
+              Icons.favorite_rounded,
+              size: 28,
             ),
             label: 'Home',
             tooltip: '',
