@@ -73,7 +73,7 @@ class _MatchProfileFullWidgetState extends State<MatchProfileFullWidget>
                         color: FlutterFlowTheme.background,
                       ),
                       child: Image.asset(
-                        'assets/images/3349.png',
+                        'assets/images/ALICE.jpg',
                         width: 100,
                         height: 100,
                         fit: BoxFit.cover,

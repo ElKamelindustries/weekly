@@ -1,5 +1,7 @@
+import '../auth_page/auth_page_widget.dart';
 import '../components/spacer10_widget.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
+import '../flutter_flow/flutter_flow_choice_chips.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
@@ -21,6 +23,7 @@ class HomePageFullWidget extends StatefulWidget {
 class _HomePageFullWidgetState extends State<HomePageFullWidget>
     with TickerProviderStateMixin {
   PageController activitiesController;
+  String choiceChipsValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
     'pageViewOnActionTriggerAnimation': AnimationInfo(
@@ -599,10 +602,21 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                         child: ExpandableNotifier(
                                           initialExpanded: true,
                                           child: ExpandablePanel(
-                                            header: Text(
-                                              'What happened so far',
-                                              textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.title3,
+                                            header: InkWell(
+                                              onTap: () async {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        AuthPageWidget(),
+                                                  ),
+                                                );
+                                              },
+                                              child: Text(
+                                                'What happened so far',
+                                                textAlign: TextAlign.start,
+                                                style: FlutterFlowTheme.title3,
+                                              ),
                                             ),
                                             collapsed: Container(
                                               width: MediaQuery.of(context)
@@ -1114,6 +1128,50 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                         ),
                                       ),
                                     ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(0.65, -0.35),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            15, 0, 0, 0),
+                                        child: FlutterFlowChoiceChips(
+                                          initialOption: choiceChipsValue ??=
+                                              'Critical !',
+                                          options: [
+                                            ChipData('Critical !',
+                                                Icons.star_rounded)
+                                          ],
+                                          onChanged: (val) => setState(
+                                              () => choiceChipsValue = val),
+                                          selectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.secondaryColor,
+                                            textStyle: FlutterFlowTheme
+                                                .bodyText1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Colors.white,
+                                            ),
+                                            iconColor: Color(0xFFFBE90A),
+                                            iconSize: 18,
+                                            elevation: 5,
+                                          ),
+                                          unselectedChipStyle: ChipStyle(
+                                            backgroundColor: Colors.white,
+                                            textStyle: FlutterFlowTheme
+                                                .bodyText2
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF262D34),
+                                            ),
+                                            iconColor: Color(0xFF262D34),
+                                            iconSize: 18,
+                                            elevation: 4,
+                                          ),
+                                          chipSpacing: 20,
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -1451,8 +1509,8 @@ class _HomePageFullWidgetState extends State<HomePageFullWidget>
                                 radius: 40,
                                 dotWidth: 20,
                                 dotHeight: 18,
-                                dotColor: Color(0xFF95A1AC),
-                                activeDotColor: FlutterFlowTheme.secondaryColor,
+                                dotColor: Color(0x5895A1AC),
+                                activeDotColor: Color(0x72413369),
                                 paintStyle: PaintingStyle.fill,
                               ),
                             ),

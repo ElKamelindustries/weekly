@@ -1,4 +1,5 @@
 import '../final_day/final_day_widget.dart';
+import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +13,36 @@ class PictionaryWidget extends StatefulWidget {
   _PictionaryWidgetState createState() => _PictionaryWidgetState();
 }
 
-class _PictionaryWidgetState extends State<PictionaryWidget> {
+class _PictionaryWidgetState extends State<PictionaryWidget>
+    with TickerProviderStateMixin {
+  final animationsMap = {
+    'containerOnPageLoadAnimation1': AnimationInfo(
+      curve: Curves.linear,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      delay: 400,
+      fadeIn: true,
+      slideOffset: Offset(50, 0),
+    ),
+    'containerOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      delay: 1000,
+      fadeIn: true,
+      slideOffset: Offset(-50, 0),
+    ),
+  };
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    startPageLoadAnimations(
+      animationsMap.values
+          .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
+      this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,9 +94,8 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
                                 Text(
                                   'Guess the object',
                                   style: FlutterFlowTheme.title2.override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Poppins',
                                     color: Color(0xFF090F13),
-                                    fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -257,7 +285,9 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
                                       ),
                                     ),
                                   ),
-                                ),
+                                ).animated([
+                                  animationsMap['containerOnPageLoadAnimation1']
+                                ]),
                               ),
                             ),
                             Align(
@@ -288,7 +318,9 @@ class _PictionaryWidgetState extends State<PictionaryWidget> {
                                       ),
                                     ),
                                   ),
-                                ),
+                                ).animated([
+                                  animationsMap['containerOnPageLoadAnimation2']
+                                ]),
                               ),
                             ),
                           ],

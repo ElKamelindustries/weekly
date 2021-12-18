@@ -15,6 +15,10 @@ import '../../social_media/social_media_widget.dart';
 import '../../personal_questions/personal_questions_widget.dart';
 import '../../personal_questions2/personal_questions2_widget.dart';
 import '../../personal_questions3/personal_questions3_widget.dart';
+import '../../insert_social_media/insert_social_media_widget.dart';
+import '../../pq1/pq1_widget.dart';
+import '../../pq2/pq2_widget.dart';
+import '../../pq3/pq3_widget.dart';
 import '../../profile_landing_page/profile_landing_page_widget.dart';
 import '../../profile_new/profile_new_widget.dart';
 import '../../tutoriial_page/tutoriial_page_widget.dart';
@@ -38,6 +42,7 @@ import '../../pictionary2/pictionary2_widget.dart';
 import '../../pictionary_three/pictionary_three_widget.dart';
 import '../../pictionary/pictionary_widget.dart';
 import '../../final_day/final_day_widget.dart';
+import '../../final_day2/final_day2_widget.dart';
 import '../../would_you_rather1/would_you_rather1_widget.dart';
 import '../../would_you_rather1_selected/would_you_rather1_selected_widget.dart';
 import '../../wait_page/wait_page_widget.dart';
@@ -50,9 +55,7 @@ import '../../never_have_overview/never_have_overview_widget.dart';
 import '../../forgot_password_phone/forgot_password_phone_widget.dart';
 import '../../forgot_password_verify_code/forgot_password_verify_code_widget.dart';
 import '../../audio_game/audio_game_widget.dart';
-import '../../insert_social_media/insert_social_media_widget.dart';
 import '../../pictionary_copy/pictionary_copy_widget.dart';
-import '../../final_day_copy/final_day_copy_widget.dart';
 
 class PushNotificationsHandler extends StatefulWidget {
   const PushNotificationsHandler(
@@ -124,6 +127,10 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'PersonalQuestions': (data) async => PersonalQuestionsWidget(),
   'PersonalQuestions2': (data) async => PersonalQuestions2Widget(),
   'PersonalQuestions3': (data) async => PersonalQuestions3Widget(),
+  'InsertSocialMedia': (data) async => InsertSocialMediaWidget(),
+  'PQ1': (data) async => Pq1Widget(),
+  'PQ2': (data) async => Pq2Widget(),
+  'PQ3': (data) async => Pq3Widget(),
   'Profile_Landing_Page': (data) async => ProfileLandingPageWidget(),
   'Profile_New': (data) async => ProfileNewWidget(),
   'TutoriialPage': (data) async => TutoriialPageWidget(),
@@ -150,6 +157,7 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'PictionaryThree': (data) async => PictionaryThreeWidget(),
   'Pictionary': (data) async => PictionaryWidget(),
   'FinalDay': (data) async => FinalDayWidget(),
+  'FinalDay2': (data) async => FinalDay2Widget(),
   'WouldYouRather1': (data) async => WouldYouRather1Widget(),
   'WouldYouRather1Selected': (data) async => WouldYouRather1SelectedWidget(),
   'WaitPage': (data) async => WaitPageWidget(),
@@ -165,9 +173,7 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'ForgotPasswordPhone': (data) async => ForgotPasswordPhoneWidget(),
   'ForgotPasswordVerifyCode': (data) async => ForgotPasswordVerifyCodeWidget(),
   'AudioGame': (data) async => AudioGameWidget(),
-  'InsertSocialMedia': (data) async => InsertSocialMediaWidget(),
   'PictionaryCopy': (data) async => PictionaryCopyWidget(),
-  'FinalDayCopy': (data) async => FinalDayCopyWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

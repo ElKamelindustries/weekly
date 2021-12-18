@@ -68,47 +68,26 @@ class _ProfileFullWidgetState extends State<ProfileFullWidget> {
                                 decoration: BoxDecoration(
                                   color: Color(0xFFEEEEEE),
                                 ),
-                                child: InkWell(
-                                  onTap: () async {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          title: Text('Welcome to Week.ly'),
-                                          content: Text(
-                                              'This is your new profile, make it yours'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Continue'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  },
-                                  child: FlutterFlowMediaDisplay(
-                                    path: valueOrDefault<String>(
-                                      uploadedFileUrl,
-                                      'https://i.pinimg.com/474x/76/94/84/769484dafbe89bf2b8a22379658956c4.jpg',
-                                    ),
-                                    imageBuilder: (path) => Image.network(
-                                      path,
-                                      width: MediaQuery.of(context).size.width,
-                                      height: 500,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    videoPlayerBuilder: (path) =>
-                                        FlutterFlowVideoPlayer(
-                                      path: path,
-                                      width: 300,
-                                      autoPlay: false,
-                                      looping: true,
-                                      showControls: true,
-                                      allowFullScreen: true,
-                                      allowPlaybackSpeedMenu: false,
-                                    ),
+                                child: FlutterFlowMediaDisplay(
+                                  path: valueOrDefault<String>(
+                                    uploadedFileUrl,
+                                    'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+                                  ),
+                                  imageBuilder: (path) => Image.network(
+                                    path,
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 500,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  videoPlayerBuilder: (path) =>
+                                      FlutterFlowVideoPlayer(
+                                    path: path,
+                                    width: 300,
+                                    autoPlay: false,
+                                    looping: true,
+                                    showControls: true,
+                                    allowFullScreen: true,
+                                    allowPlaybackSpeedMenu: false,
                                   ),
                                 ),
                               ),

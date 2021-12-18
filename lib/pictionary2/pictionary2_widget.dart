@@ -1,3 +1,4 @@
+import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../pictionary_three/pictionary_three_widget.dart';
@@ -12,8 +13,36 @@ class Pictionary2Widget extends StatefulWidget {
   _Pictionary2WidgetState createState() => _Pictionary2WidgetState();
 }
 
-class _Pictionary2WidgetState extends State<Pictionary2Widget> {
+class _Pictionary2WidgetState extends State<Pictionary2Widget>
+    with TickerProviderStateMixin {
+  final animationsMap = {
+    'containerOnPageLoadAnimation1': AnimationInfo(
+      curve: Curves.linear,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      delay: 300,
+      fadeIn: true,
+      slideOffset: Offset(50, 0),
+    ),
+    'containerOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      delay: 1000,
+      fadeIn: true,
+      slideOffset: Offset(-50, 0),
+    ),
+  };
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    startPageLoadAnimations(
+      animationsMap.values
+          .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
+      this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +81,7 @@ class _Pictionary2WidgetState extends State<Pictionary2Widget> {
                               Text(
                                 'Guess the object',
                                 style: FlutterFlowTheme.title2.override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Poppins',
                                   color: Color(0xFF090F13),
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold,
@@ -72,7 +101,7 @@ class _Pictionary2WidgetState extends State<Pictionary2Widget> {
                                 child: Text(
                                   'It can be a character, animal or thing',
                                   style: FlutterFlowTheme.bodyText2.override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Poppins',
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
@@ -157,7 +186,9 @@ class _Pictionary2WidgetState extends State<Pictionary2Widget> {
                                   ),
                                 ),
                               ),
-                            ),
+                            ).animated([
+                              animationsMap['containerOnPageLoadAnimation1']
+                            ]),
                           ),
                           Align(
                             alignment: AlignmentDirectional(0.75, 0),
@@ -182,7 +213,9 @@ class _Pictionary2WidgetState extends State<Pictionary2Widget> {
                                     ),
                                   ),
                                 ),
-                              ),
+                              ).animated([
+                                animationsMap['containerOnPageLoadAnimation2']
+                              ]),
                             ),
                           ),
                         ],

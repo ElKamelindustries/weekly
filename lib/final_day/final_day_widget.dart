@@ -1,3 +1,4 @@
+import '../final_day2/final_day2_widget.dart';
 import '../flutter_flow/flutter_flow_choice_chips.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -120,53 +121,63 @@ class _FinalDayWidgetState extends State<FinalDayWidget> {
                                 ],
                               ),
                             ),
-                            Container(
-                              height: 100,
-                              decoration: BoxDecoration(),
-                              child: Align(
-                                alignment: AlignmentDirectional(1, -1),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      70, 0, 0, 0),
-                                  child: FlutterFlowChoiceChips(
-                                    initialOption: choiceChipsValue ??= '0',
-                                    options: [
-                                      ChipData('Yes', Icons.celebration),
-                                      ChipData('No', Icons.close_rounded)
-                                    ],
-                                    onChanged: (val) =>
-                                        setState(() => choiceChipsValue = val),
-                                    selectedChipStyle: ChipStyle(
-                                      backgroundColor: Color(0xFF947BD3),
-                                      textStyle:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        fontSize: 20,
+                            InkWell(
+                              onDoubleTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FinalDay2Widget(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 100,
+                                decoration: BoxDecoration(),
+                                child: Align(
+                                  alignment: AlignmentDirectional(1, -1),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        70, 0, 0, 0),
+                                    child: FlutterFlowChoiceChips(
+                                      initialOption: choiceChipsValue ??= '0',
+                                      options: [
+                                        ChipData('Yes', Icons.celebration),
+                                        ChipData('No', Icons.close_rounded)
+                                      ],
+                                      onChanged: (val) => setState(
+                                          () => choiceChipsValue = val),
+                                      selectedChipStyle: ChipStyle(
+                                        backgroundColor: Color(0xFF947BD3),
+                                        textStyle:
+                                            FlutterFlowTheme.bodyText1.override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                        ),
+                                        iconColor: Colors.white,
+                                        iconSize: 24,
+                                        labelPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                15, 0, 15, 0),
+                                        elevation: 4,
                                       ),
-                                      iconColor: Colors.white,
-                                      iconSize: 24,
-                                      labelPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              15, 0, 15, 0),
-                                      elevation: 4,
-                                    ),
-                                    unselectedChipStyle: ChipStyle(
-                                      backgroundColor: FlutterFlowTheme.panel,
-                                      textStyle:
-                                          FlutterFlowTheme.bodyText2.override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFF262D34),
-                                        fontSize: 20,
+                                      unselectedChipStyle: ChipStyle(
+                                        backgroundColor: FlutterFlowTheme.panel,
+                                        textStyle:
+                                            FlutterFlowTheme.bodyText2.override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFF262D34),
+                                          fontSize: 20,
+                                        ),
+                                        iconColor: Color(0xFF262D34),
+                                        iconSize: 24,
+                                        labelPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                15, 0, 15, 0),
+                                        elevation: 4,
                                       ),
-                                      iconColor: Color(0xFF262D34),
-                                      iconSize: 24,
-                                      labelPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              15, 0, 15, 0),
-                                      elevation: 4,
+                                      chipSpacing: 20,
                                     ),
-                                    chipSpacing: 20,
                                   ),
                                 ),
                               ),

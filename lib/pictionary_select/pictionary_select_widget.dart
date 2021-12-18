@@ -111,17 +111,17 @@ class _PictionarySelectWidgetState extends State<PictionarySelectWidget> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(0),
-                      child: Image.asset(
-                        'assets/images/mario-and-luigi.jpeg',
+                      child: Image.network(
+                        'https://lh3.googleusercontent.com/UXPCV4viIy6CVJtsVqY6Vx8EMaQxAX1n_dg1qAnSMIpm5EhgXnGJTSuXi9vyGxAF',
                         width: 200,
                         height: 300,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.9, 0),
+                      alignment: AlignmentDirectional(0.78, 0),
                       child: Text(
-                        '\"Mario and Luigi\"',
+                        '\"Apollo 11\"',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w600,

@@ -1,4 +1,5 @@
 import '../components/three_dots_widget.dart';
+import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../pictionary/pictionary_widget.dart';
@@ -13,8 +14,37 @@ class PictionaryThreeWidget extends StatefulWidget {
   _PictionaryThreeWidgetState createState() => _PictionaryThreeWidgetState();
 }
 
-class _PictionaryThreeWidgetState extends State<PictionaryThreeWidget> {
+class _PictionaryThreeWidgetState extends State<PictionaryThreeWidget>
+    with TickerProviderStateMixin {
+  final animationsMap = {
+    'containerOnPageLoadAnimation': AnimationInfo(
+      curve: Curves.linear,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      delay: 600,
+      fadeIn: true,
+      slideOffset: Offset(-50, 0),
+    ),
+    'threeDotsOnPageLoadAnimation': AnimationInfo(
+      curve: Curves.linear,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      delay: 1200,
+      fadeIn: true,
+      slideOffset: Offset(50, 0),
+    ),
+  };
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    startPageLoadAnimations(
+      animationsMap.values
+          .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
+      this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +96,7 @@ class _PictionaryThreeWidgetState extends State<PictionaryThreeWidget> {
                                 Text(
                                   'Guess the object',
                                   style: FlutterFlowTheme.title2.override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Poppins',
                                     color: Color(0xFF090F13),
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold,
@@ -87,7 +117,7 @@ class _PictionaryThreeWidgetState extends State<PictionaryThreeWidget> {
                                   child: Text(
                                     'It can be a character, animal or thing',
                                     style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Poppins',
                                       color: Color(0xFF8B97A2),
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
@@ -227,13 +257,17 @@ class _PictionaryThreeWidgetState extends State<PictionaryThreeWidget> {
                                       ),
                                     ),
                                   ),
-                                ),
+                                ).animated([
+                                  animationsMap['containerOnPageLoadAnimation']
+                                ]),
                               ),
                             ),
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                              child: ThreeDotsWidget(),
+                              child: ThreeDotsWidget().animated([
+                                animationsMap['threeDotsOnPageLoadAnimation']
+                              ]),
                             ),
                           ],
                         ),

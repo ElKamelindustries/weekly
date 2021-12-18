@@ -1,4 +1,5 @@
 import '../components/three_dots_widget.dart';
+import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../pictionary2/pictionary2_widget.dart';
@@ -13,8 +14,29 @@ class Pictionary1Widget extends StatefulWidget {
   _Pictionary1WidgetState createState() => _Pictionary1WidgetState();
 }
 
-class _Pictionary1WidgetState extends State<Pictionary1Widget> {
+class _Pictionary1WidgetState extends State<Pictionary1Widget>
+    with TickerProviderStateMixin {
+  final animationsMap = {
+    'threeDotsOnPageLoadAnimation': AnimationInfo(
+      curve: Curves.linear,
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      delay: 300,
+      fadeIn: true,
+      slideOffset: Offset(60, 0),
+    ),
+  };
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    startPageLoadAnimations(
+      animationsMap.values
+          .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
+      this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +88,7 @@ class _Pictionary1WidgetState extends State<Pictionary1Widget> {
                                 Text(
                                   'Guess the object',
                                   style: FlutterFlowTheme.title2.override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Poppins',
                                     color: Color(0xFF090F13),
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold,
@@ -87,7 +109,7 @@ class _Pictionary1WidgetState extends State<Pictionary1Widget> {
                                   child: Text(
                                     'It can be a character, animal or thing',
                                     style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Poppins',
                                       color: Color(0xFF8B97A2),
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
@@ -151,7 +173,9 @@ class _Pictionary1WidgetState extends State<Pictionary1Widget> {
                           children: [
                             Align(
                               alignment: AlignmentDirectional(-0.85, 0),
-                              child: ThreeDotsWidget(),
+                              child: ThreeDotsWidget().animated([
+                                animationsMap['threeDotsOnPageLoadAnimation']
+                              ]),
                             ),
                           ],
                         ),
